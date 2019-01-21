@@ -27,10 +27,8 @@ var DinnerModel = function() {
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
 		for( var i = 0; i < dinner_menu.length-1; i++){ 
-			if ( dinner_menu[i] === id) {
-			  arr.splice(i, 1); 
+			this.getdish(dinner_menu[i]);
 			}
-		 }		 
 		//return dinner_menu;
 		//TODO Lab 1
 	}
