@@ -31,15 +31,19 @@ var DinnerModel = function() {
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
+		var full_menu=[];
 		for( var i = 0; i < dinner_menu.length-1; i++){ 
-			this.getDish(dinner_menu[i]);
+			full_menu.push(this.getDish(dinner_menu[i]));
 			}
+		return full_menu;
 		//return dinner_menu;
 		//TODO Lab 1
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
 	this.getAllIngredients = function() {
+		var full_menu=this.getFullMenu;
+		
 		//TODO Lab 1
 	}
 
