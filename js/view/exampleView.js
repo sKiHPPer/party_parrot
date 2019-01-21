@@ -35,6 +35,7 @@ var ExampleView = function (container, model) {
 	 */
 	var numberOfGuests = container.find("#numberOfGuests");
 
+	
 	/**
 	 * When we want references to some view elements to be available from outside of view, we 
 	 * define them as this.someName. We don't need this in Lab 1 yet, but in Lab 2 it 
