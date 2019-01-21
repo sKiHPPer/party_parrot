@@ -1,25 +1,37 @@
 //DinnerModel Object constructor
 var DinnerModel = function() {
- 
 	//TODO Lab 1 implement the data structure that will hold number of guest
 	// and selected dishes for the dinner menu
 
+	var guests=0;
+	var dinner_menu=[];
 
 	this.setNumberOfGuests = function(num) {
+		guests=guests+num;
 		//TODO Lab 1
 	}
 	
 	this.getNumberOfGuests = function() {
+		return guests;
 		//TODO Lab 1
 	}
 
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
+
+
+		}
 		//TODO Lab 1
 	}
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
+		for( var i = 0; i < dinner_menu.length-1; i++){ 
+			if ( dinner_menu[i] === id) {
+			  arr.splice(i, 1); 
+			}
+		 }		 
+		//return dinner_menu;
 		//TODO Lab 1
 	}
 
@@ -36,11 +48,19 @@ var DinnerModel = function() {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
+		
+		dinner_menu.push(id);
+
 		//TODO Lab 1 
 	}
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
+		for( var i = 0; i < dinner_menu.length-1; i++){ 
+			if ( dinner_menu[i] === id) {
+			  arr.splice(i, 1); 
+			}
+		 }		 
 		//TODO Lab 1
 	}
 
