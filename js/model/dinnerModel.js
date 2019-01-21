@@ -53,11 +53,9 @@ var DinnerModel = function() {
 	this.addDishToMenu = function(id) {
 		var new_dish=this.getDish(id);
 		var type=new_dish.type;
-		if (this.getSelectedDish(type) === null){
-		}
-		else{
-			var dish=this.getSelectedDish(type);
-			this.removeDishFromMenu(dish.id);
+		var old_dish=this.getSelectedDish(type);
+		if (old_dish!==false){
+			this.removeDishFromMenu(old_dish.id);
 		}
 		dinner_menu.push(id);
 		//TODO Lab 1 
