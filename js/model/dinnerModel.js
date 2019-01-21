@@ -5,6 +5,10 @@ var DinnerModel = function() {
 
 	var guests=0;
 	var dinner_menu=[];
+	var full_menu=[];
+	var all_ingredients=[];
+	all_ingredients=this.getAllIngredients;
+	full_menu=this.getFullMenu;
 
 	this.setNumberOfGuests = function(num) {
 		guests=guests+num;
@@ -30,24 +34,30 @@ var DinnerModel = function() {
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
-		var full_menu=[];
 		for( var i = 0; i < dinner_menu.length-1; i++){ 
 			full_menu.push(this.getDish(dinner_menu[i]));
 			}
 		return full_menu;
-		//return dinner_menu;
 		//TODO Lab 1
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
 	this.getAllIngredients = function() {
-		var full_menu=this.getFullMenu;
-		
+		for(dish in full_menu){
+				for(ingredient in dish.ingredients)
+				all_ingredients.push(ingredient);	
+		}
+		return all_ingredients;
 		//TODO Lab 1
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
+		var total_price=0;
+		for (ingredient in all_ingredients){
+			total_price=total_price+ingredient.price;
+		}
+		return total_price;
 		//TODO Lab 1
 	}
 
