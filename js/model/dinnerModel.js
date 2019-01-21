@@ -18,7 +18,12 @@ var DinnerModel = function() {
 
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
-
+		for( var i = 0; i < dinner_menu.length-1; i++){ 
+			var dish=this.getDish(dinner_menu[i]);
+			if(dish.type === type) {
+				return dish;
+			}
+			}
 
 		}
 		//TODO Lab 1
@@ -27,7 +32,7 @@ var DinnerModel = function() {
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
 		for( var i = 0; i < dinner_menu.length-1; i++){ 
-			this.getdish(dinner_menu[i]);
+			this.getDish(dinner_menu[i]);
 			}
 		//return dinner_menu;
 		//TODO Lab 1
@@ -46,9 +51,15 @@ var DinnerModel = function() {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
-		
+		var new_dish=this.getDish(id);
+		var type=new_dish.type;
+		if (this.getSelectedDish(type) === null){
+		}
+		else{
+			var dish=this.getSelectedDish(type);
+			this.removeDishFromMenu(dish.id);
+		}
 		dinner_menu.push(id);
-
 		//TODO Lab 1 
 	}
 
