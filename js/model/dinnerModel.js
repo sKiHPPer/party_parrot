@@ -22,10 +22,10 @@ var DinnerModel = function() {
 
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
-		for( var i = 0; i < dinner_menu.length; i++){ 
-			var dish=this.getDish(dinner_menu[i]);
-			return dish;
-			if(dish.type === type) {
+		for(dish in dinner_menu){ 
+			var dish_id=dinner_menu[dish];
+			var dish_type=getDish(dish_id);
+			if(dish_type.type === type) {
 				return dish.id;
 			}
 		}
