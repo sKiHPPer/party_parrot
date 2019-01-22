@@ -5,8 +5,6 @@ var DinnerModel = function() {
 
 	var guests=0;
 	var dinner_menu=[];
-	var all_ingredients=[];
-	all_ingredients=this.getAllIngredients;
 
 	this.setNumberOfGuests = function(num) {
 		guests=num;
@@ -43,27 +41,33 @@ var DinnerModel = function() {
 			full_menu.push(dis);
 			}
 		return full_menu;
-		//TODO Lab 1
+		//KLAR
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
 	this.getAllIngredients = function() {
+		var full_menu = this.getFullMenu();
+		var all_ingredients=[];
 		for(dish in full_menu){
-				for(ingredient in dish.ingredients)
-				all_ingredients.push(ingredient);	
+			all_ingredients.push(full_menu[dish].ingredients);
 		}
 		return all_ingredients;
-		//TODO Lab 1
+		//KLAR
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
 		var total_price=0;
-		for (ingredient in all_ingredients){
-			total_price=total_price+ingredient.price;
+		var all_ingredients = this.getAllIngredients();
+		for (dish in all_ingredients){
+			for (i in all_ingredients[dish]){
+				var ingredient = all_ingredients[dish][i]
+				console.log(ingredient);
+				total_price=total_price+(ingredient.price*guests);
+			}
 		}
 		return total_price;
-		//TODO Lab 1
+		//KLAR
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
