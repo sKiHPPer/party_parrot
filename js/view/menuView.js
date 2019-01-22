@@ -1,7 +1,6 @@
 
 var MenuView = function (container, model,type) {
 
-    var menuView = container.find("#menuView");
     if(document.getElementById('menuView')){
     var AllDishes = model.getAllDishes(type);
     var tha_dish='';
