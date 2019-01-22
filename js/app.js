@@ -2,12 +2,14 @@ $(function() {
 	//We instantiate our model
 	var model = new DinnerModel();
 	var type='starter';
+	var guests=1;
+	var dish_id=1;
 	
 	// And create the instance of ExampleView
 
 	var exampleView = new ExampleView($("#exampleView"), model);
 	var headerView = new HeaderView($("#headerView"), model);
-	var dishView = new DishView($("#dishView"), model,1);
+	var dishView = new DishView($("#dishView"), model,dish_id, guests);
 	var menuView = new MenuView($("#menuView"),model,type);
 	var menuView = new Sidebar($("#sidebar"),model,type);
 	//var homeView = new HomeView($("#homeView"), model);
