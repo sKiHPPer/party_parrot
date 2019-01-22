@@ -9,6 +9,7 @@ $(function() {
 	var headerView = new HeaderView($("#headerView"), model);
 	var dishView = new DishView($("#dishView"), model);
 	var menuView = new MenuView($("#menuView"),model,type);
+	var menuView = new Sidebar($("#sidebar"),model,type);
 	//var homeView = new HomeView($("#homeView"), model);
 	//var confirmdinnerView = new ConfirmdinnerView($("#confirmdinnerView"), model);
 	//var menuView = new MenuView($("#menuView"), model);
