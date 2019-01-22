@@ -33,7 +33,7 @@ var ExampleView = function (container, model) {
 	 * in some other view gives the same ID to another element.
 	 * 
 	 */
-	var numberOfGuests = container.find("#guests");
+	var numberOfGuests = container.find("#numberOfGuests");
 
 	
 	/**
@@ -46,8 +46,8 @@ var ExampleView = function (container, model) {
 	 * this button and do something with it (see Lab 2).
 	 * 
 	 */
-	this.plusButton = container.find("#guests");
-	this.minusButton = container.find("#guests");
+	this.plusButton = container.find("#numberOfGuests");
+	this.minusButton = container.find("#numberOfGuests");
 	
 	/**
 	 * Here we use @var {jQuery object} numberOfGuests that is a reference to <span>
