@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dinner planner</title>
+
+    <!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="index.css"/>
+
+  </head>
+  <body>
+
+		<div id="header">
+			<!--Här ska den statiska headern vara som finns med på alla sidor-->
+			<a href="#" id="header"><h1>Dinner planner</h1></a>
+		</div>
+
+
+	<div class="container">
+		<!--Här ska allt innehåll uppdateras kontinuerligt.-->
+		<div id="exampleView">
+			<!--Här ska första knappen finnas som ger oss möjligheten att se menuView-->
+			<div>
+				<span id="header"></span>
+			</div>
+			<div>
+          		<button id="backSearch" class="btn">back to search</button>
+				<button id="addMenu" class="btn">Add to menu</button>
+			</div>
+		</div>
+
+		<div id="dishView">
+			<!--Här ska all kod för att visa upp vår maträtt finnas. Samt dess ingredienser osv. Det ska även finnas tillbaka knapp och en knapp att lägga till rätten på menyn-->
+			
+		</div>
+
+	</div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+	<!-- The application JavaScript code -->
+	<script src="js/app.js"></script>
+	<script src="js/model/dinnerModel.js"></script>
+	<script src="js/view/exampleView.js"></script>
+	<script src="js/view/homeView.js"></script>
+	<!-- TODO: Here you should include JS code for your other views -->
+  </body>
+</html>
