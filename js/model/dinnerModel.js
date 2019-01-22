@@ -5,10 +5,8 @@ var DinnerModel = function() {
 
 	var guests=0;
 	var dinner_menu=[];
-	var full_menu=[];
 	var all_ingredients=[];
 	all_ingredients=this.getAllIngredients;
-	full_menu=this.getFullMenu; 
 
 	this.setNumberOfGuests = function(num) {
 		guests=num;
@@ -38,9 +36,11 @@ var DinnerModel = function() {
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
-		for( var i = 0; i < dinner_menu.length; i++){ 
-			var dis = this.getDish(dinner_menu[i]);
-			full_menu.push(dis); //Den har problem med den här raden. De tre nedanstående funktioner behöver denna funktion för att fungera
+		var full_menu=[];
+		for(dish in dinner_menu){
+			var dis = this.getDish(dinner_menu[dish]);
+			//console.log(dis);
+			full_menu.push(dis);
 			}
 		return full_menu;
 		//TODO Lab 1
@@ -73,18 +73,18 @@ var DinnerModel = function() {
 		var new_dish=this.getDish(id);
 		var type=new_dish.type;
 		var old_dish=this.getSelectedDish(type);
-		if(typeof old_dish !== 'undefined'){ 
-			this.removeDishFromMenu(old_dish.id);
+		if(typeof old_dish !== 'undefined'){
+			this.removeDishFromMenu(old_dish);
 		}
 		dinner_menu.push(id);
 		//KLAR
 	}
 
 	//Removes dish from menu
-	this.removeDishFromMenu = function(id) {
-		for( var i = 0; i < dinner_menu.length; i++){ 
-			if ( dinner_menu[i] === id) {
-			  dinner_menu.splice(i, 1); 
+	this.removeDishFromMenu = function(ids) {
+		for( var i = 0; i < dinner_menu.length; i++){
+			if ( dinner_menu[i] === ids) {
+			  dinner_menu.splice(i, 1);
 			}
 		 }		 
 		//KLAR
