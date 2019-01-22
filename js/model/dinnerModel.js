@@ -21,12 +21,12 @@ var DinnerModel = function() {
 	}
 
 	//Returns the dish that is on the menu for selected type 
-	this.getSelectedDish = function(type) {
-		for(dish in dinner_menu){ 
-			var dish_id=dinner_menu[dish];
-			var dish_type=getDish(dish_id);
-			if(dish_type.type === type) {
-				return dish.id;
+	this.getSelectedDish = function(typett) {
+		for(dish in dinner_menu){
+			var dish_id = dinner_menu[dish];
+			var dish_type=this.getDish(dish_id);
+			if(dish_type.type == typett) {
+				return dish_type.id;
 			}
 		}
 		//KLAR
