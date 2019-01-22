@@ -67,7 +67,7 @@ var DinnerModel = function() {
 		var new_dish=this.getDish(id);
 		var type=new_dish.type;
 		var old_dish=this.getSelectedDish(type);
-		if (old_dish=="undefined"){ //undefined, ändra
+		if (old_dish.type === type){
 			this.removeDishFromMenu(old_dish.id);
 		}
 		dinner_menu.push(id);
