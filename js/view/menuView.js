@@ -3,7 +3,8 @@ var MenuView = function (container, model,type) {
     
     
 
-	var menuView = container.find("#menuView");
+    var menuView = container.find("#menuView");
+    if(document.getElementById('menuView')){
     var AllDishes = model.getAllDishes(type);
     var tha_dish='';
     var html='';
@@ -16,6 +17,6 @@ var MenuView = function (container, model,type) {
     }
     menuView.html("asedrftgyhjklö");
     document.getElementById('menuView').innerHTML=html;
-
+    }
 	
 }
