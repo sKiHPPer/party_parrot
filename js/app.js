@@ -4,6 +4,8 @@ $(function() {
 	
 	// And create the instance of ExampleView
 	var exampleView = new ExampleView($("#exampleView"));
+	var headerView = new HeaderView($("#headerView"));
+	var menuView = new MenuView($("#menuView"),model);
 
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to
