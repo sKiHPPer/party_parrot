@@ -7,7 +7,6 @@ var DinnerModel = function() {
 	var dinner_menu=[];
 	var full_menu=[];
 	var all_ingredients=[];
-	var dish='';
 	all_ingredients=this.getAllIngredients;
 	full_menu=this.getFullMenu; 
 
@@ -23,27 +22,24 @@ var DinnerModel = function() {
 
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
-		for( var i = 0; i < dinner_menu.length-1; i++){ 
+		for( var i = 0; i < dinner_menu.length; i++){ 
 			var dish=this.getDish(dinner_menu[i]);
+			return dish;
 			if(dish.type === type) {
-				return dish;
+				return dish.id;
 			}
 		}
-		//TODO Lab 1
+		//KLAR
 	}
-
-
 
 	this.exp = function() {
 		return dinner_menu;
 	}
 
-	
-		
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
-		for( var i = 0; i < dinner_menu.length-1; i++){ 
+		for( var i = 0; i < dinner_menu.length; i++){ 
 			full_menu.push(this.getDish(dinner_menu[i]));
 			}
 		return full_menu;
@@ -72,25 +68,26 @@ var DinnerModel = function() {
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
+
 	this.addDishToMenu = function(id) {
 		var new_dish=this.getDish(id);
-		//var type=new_dish.type;
-		//var old_dish=this.getSelectedDish(type);
-		//if (old_dish.type === type){ 
-		//	this.removeDishFromMenu(old_dish.id);
-		//}
+		var type=new_dish.type;
+		var old_dish=this.getSelectedDish(type);
+		if(typeof old_dish !== 'undefined'){ 
+			this.removeDishFromMenu(old_dish.id);
+		}
 		dinner_menu.push(id);
-		//TODO Lab 1 
+		//KLAR
 	}
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
-		for( var i = 0; i < dinner_menu.length-1; i++){ 
+		for( var i = 0; i < dinner_menu.length; i++){ 
 			if ( dinner_menu[i] === id) {
-			  arr.splice(i, 1); 
+			  dinner_menu.splice(i, 1); 
 			}
 		 }		 
-		//TODO Lab 1
+		//KLAR
 	}
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
