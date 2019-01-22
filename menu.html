@@ -12,40 +12,41 @@
 
   </head>
   <body>
-    <!--Denna ska inte vara kopierad?-->
-		<div id="header">
-			<!--Här ska den statiska headern vara som finns med på alla sidor-->
-			<a href="#" id="header"><h1>Dinner planner</h1></a>
-		</div>
 
 
 	<div class="container">
 
-		<div id="menuView">
-            <!--Här ska menyn med alla bilder och rätter finnas(bilderna ska vara knappar eller på något sätt länka oss till andra sidor)-->
-            <h2>FIND A DISH</h2>
-            <div class="search_bar">
-                    <input type="text" placeholder="Enter key words">
-											<select class="form-control" id="sel1">
-												<option>All</option>
-												<option>Main Course</option>
-												<option>Side Dish</option>
-												<option>Dessert</option>
-												<option>Appetizer</option>
-												<option>Starter</option>
-											</select>
-                    <input type="submit" value="Search">
-            </div>
+		<div id="headerView"> <!--Här ska den statiska headern vara som finns med på alla sidor-->
+			<div>
+				<span id="header"></span>
+			</div>
 		</div>
 
-			<div id="menuView">
-				<!--Här ska första knappen finnas som ger oss möjligheten att se menuView-->
-				<div>
-					Alla rätter med bild: <span id="img_dishes"></span>
-				</div>
-				<div>
-				</div>
+		<div id="menuView">
+			<!--Här ska menyn med alla bilder och rätter finnas(bilderna ska vara knappar eller på något sätt länka oss till andra sidor)-->
+			<h2>FIND A DISH</h2>
+			<div class="search_bar">
+				<input type="text" placeholder="Enter key words">
+					<select class="form-control" id="sel1">
+						<option>All</option>
+						<option>Main Course</option>
+						<option>Side Dish</option>
+						<option>Dessert</option>
+						<option>Appetizer</option>
+						<option>Starter</option>
+					</select>
+				<input type="submit" value="Search">
 			</div>
+		</div>
+
+		<div id="menuView">
+			<!--Här ska första knappen finnas som ger oss möjligheten att se menuView-->
+			<div>
+				Alla rätter med bild: <span id="img_dishes"></span>
+			</div>
+			<div>
+			</div>
+		</div>
 	
 
 		<div id="sidebar">
@@ -71,6 +72,7 @@
 	<script src="js/model/dinnerModel.js"></script>
 	<script src="js/view/exampleView.js"></script>
 	<script src="js/view/homeView.js"></script>
+	<script src="js/view/headerView.js"></script>
 	<!-- TODO: Here you should include JS code for your other views -->
   </body>
 </html>
