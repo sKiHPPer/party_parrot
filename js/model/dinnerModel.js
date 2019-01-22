@@ -39,7 +39,8 @@ var DinnerModel = function() {
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
 		for( var i = 0; i < dinner_menu.length; i++){ 
-			full_menu.push(this.getDish(dinner_menu[i]));
+			var dis = this.getDish(dinner_menu[i]);
+			full_menu.push(dis); //Den har problem med den här raden
 			}
 		return full_menu;
 		//TODO Lab 1
