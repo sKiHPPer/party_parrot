@@ -8,8 +8,7 @@ var Sidebar = function (container, model) {
 
     for(dish in WholeMenu){
         tha_dish=WholeMenu[dish];
-        html=html+"<p>"+tha_dish.name+"</p>"; 
-        alert("Hej");
+        html=html+"<p>"+tha_dish.name+"</p>";
     }
 
     html=html+"<p class='price'>SEK "+TotalPrice+"<p>";
