@@ -40,7 +40,7 @@ var DinnerModel = function() {
 	this.getFullMenu = function() {
 		for( var i = 0; i < dinner_menu.length; i++){ 
 			var dis = this.getDish(dinner_menu[i]);
-			full_menu.push(dis); //Den har problem med den här raden
+			full_menu.push(dis); //Den har problem med den här raden. De tre nedanstående funktioner behöver denna funktion för att fungera
 			}
 		return full_menu;
 		//TODO Lab 1
