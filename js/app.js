@@ -12,6 +12,7 @@ $(function() {
 	var dishView = new DishView($("#dishView"), model,dish_id, guests);
 	var menuView = new MenuView($("#menuView"),model,type);
 	var menuView = new Sidebar($("#sidebar"),model,type);
+	var confirmdinnerView = new ConfirmdinnerView($("#confirmdinnerView"),model, guests);
 	//var homeView = new HomeView($("#homeView"), model);
 	//var confirmdinnerView = new ConfirmdinnerView($("#confirmdinnerView"), model);
 	//var menuView = new MenuView($("#menuView"), model);
