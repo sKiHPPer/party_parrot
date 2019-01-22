@@ -14,7 +14,7 @@ var DishView = function (container, model, dish_id) {
             tha_ingredient=dish.ingredients[ingredient];
             console.log(tha_ingredient);
             //alert("image: "+"<img src='"+images/tha_dish.image+"'></img>") 
-            html=html+"<p>"+tha_ingredient.name+"</p>";
+            html=html+"<p>"+tha_ingredient.quantity+tha_ingredient.unit+tha_ingredient.name+" SEK "+tha_ingredient.price+"</p>";
 
         }
         
