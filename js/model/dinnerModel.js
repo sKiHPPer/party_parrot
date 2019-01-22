@@ -7,18 +7,18 @@ var DinnerModel = function() {
 	var dinner_menu=[];
 	var full_menu=[];
 	var all_ingredients=[];
+	var dish='';
 	all_ingredients=this.getAllIngredients;
-	full_menu=this.getFullMenu;
-	//dish?
+	full_menu=this.getFullMenu; 
 
 	this.setNumberOfGuests = function(num) {
-		guests=guests+num;
-		//TODO Lab 1
+		guests=num;
+		//KLAR
 	}
 	
 	this.getNumberOfGuests = function() {
 		return guests;
-		//TODO Lab 1
+		//KLAR
 	}
 
 	//Returns the dish that is on the menu for selected type 
@@ -29,8 +29,17 @@ var DinnerModel = function() {
 				return dish;
 			}
 		}
-	}
 		//TODO Lab 1
+	}
+
+
+
+	this.exp = function() {
+		return dinner_menu;
+	}
+
+	
+		
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
@@ -65,11 +74,11 @@ var DinnerModel = function() {
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
 		var new_dish=this.getDish(id);
-		var type=new_dish.type;
-		var old_dish=this.getSelectedDish(type);
-		if (old_dish.type === type){
-			this.removeDishFromMenu(old_dish.id);
-		}
+		//var type=new_dish.type;
+		//var old_dish=this.getSelectedDish(type);
+		//if (old_dish.type === type){ 
+		//	this.removeDishFromMenu(old_dish.id);
+		//}
 		dinner_menu.push(id);
 		//TODO Lab 1 
 	}

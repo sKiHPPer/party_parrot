@@ -1,4 +1,4 @@
-var homeView = function (container, model) {
+var HomeView = function (container, model) {
 	
 }
  

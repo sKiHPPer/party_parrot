@@ -1,14 +1,12 @@
 
-var ExampleView = function (container, model) {
+var DishView = function (container, model) {
 
-    var numberOfGuests = container.find("#guests");
-    var dishes = container.find("#");
+    var selectedDish = container.find("#dish");
 
 	this.plusButton = container.find("#guests");
 	this.minusButton = container.find("#guests");
 
-    numberOfGuests.html("Hello World");
+    selectedDish.html("Hello World");
     
-	
 }
  

@@ -13,13 +13,14 @@
   </head>
   <body>
 
-		<div id="header">
-			<!--Här ska den statiska headern vara som finns med på alla sidor-->
-			<a href="#" id="header"><h1>Dinner planner</h1></a>
-		</div>
-
 
 	<div class="container">
+		<div id="headerView"> <!--Här ska den statiska headern vara som finns med på alla sidor-->
+			<div>
+				<span id="header"></span>
+			</div>
+		</div>
+
 		<!--Här ska allt innehåll uppdateras kontinuerligt.-->
 		<div id="exampleView">
 			<!--Här ska första knappen finnas som ger oss möjligheten att se menuView-->
@@ -34,7 +35,7 @@
 
 		<div id="dishView">
 			<!--Här ska all kod för att visa upp vår maträtt finnas. Samt dess ingredienser osv. Det ska även finnas tillbaka knapp och en knapp att lägga till rätten på menyn-->
-			
+			<span id="selectedDish"></span>
 		</div>
 
 	</div>
@@ -49,6 +50,8 @@
 	<script src="js/model/dinnerModel.js"></script>
 	<script src="js/view/exampleView.js"></script>
 	<script src="js/view/homeView.js"></script>
+	<script src="js/view/headerView.js"></script>
+	<script src="js/view/dishView.js"></script>
 	<!-- TODO: Here you should include JS code for your other views -->
   </body>
 </html>

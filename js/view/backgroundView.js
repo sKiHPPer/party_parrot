@@ -1,0 +1,4 @@
+var BackgroundView = function (container) {
+	
+}
+ 
