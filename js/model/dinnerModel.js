@@ -7,7 +7,6 @@ var DinnerModel = function() {
 	var dinner_menu=[];
 	var full_menu=[];
 	var all_ingredients=[];
-	var dish='';
 	all_ingredients=this.getAllIngredients;
 	full_menu=this.getFullMenu; 
 
@@ -39,8 +38,6 @@ var DinnerModel = function() {
 	}
 
 	
-		
-
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
 		for( var i = 0; i < dinner_menu.length-1; i++){ 
