@@ -9,6 +9,7 @@ var DinnerModel = function() {
 	var all_ingredients=[];
 	all_ingredients=this.getAllIngredients;
 	full_menu=this.getFullMenu;
+	//dish?
 
 	this.setNumberOfGuests = function(num) {
 		guests=guests+num;
@@ -27,9 +28,8 @@ var DinnerModel = function() {
 			if(dish.type === type) {
 				return dish;
 			}
-			}
-
 		}
+	}
 		//TODO Lab 1
 
 	//Returns all the dishes on the menu.
