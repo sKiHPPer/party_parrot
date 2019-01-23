@@ -75,18 +75,18 @@ button {
 }
 
 
-.all_dishes {
+/*.all_dishes {
     border-top: 3px solid black;
     width: 165%;
 }
 
 .btn_image {
-        background-color: #ffffff;
-        padding: 0% 0%;
-        margin-left:5%;
-        margin-top:10%;
-        height: 70%;
-        width: 20%;
+    background-color: #ffffff;
+    padding: 0% 0%;
+    margin-left:5%;
+    margin-top:10%;
+    height: 70%;
+    width: 20%;
 
 }
 
@@ -96,7 +96,7 @@ button {
     margin:0%;
 
 }
-
+*/
 .side_cost {
     background-color: #eeeeee;
     padding: 0.5%;
@@ -123,6 +123,6 @@ button {
 }
 
 .big_box_ingredients {
-    background-color: #f6b26b;
+    background-color: #ffe599;
     border: 3px solid black;
 }
