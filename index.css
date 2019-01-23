@@ -134,3 +134,8 @@ button {
 .input_guests {
     display: inline-block;
 }
+
+
+#my_dinner {
+    border-bottom: 3px solid black;
+}
