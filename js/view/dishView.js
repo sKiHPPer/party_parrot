@@ -8,7 +8,7 @@ var DishView = function (container, model, dish_id, guests) {
         var dishPrice = model.getTotalDishPrice(dish_id);
 
         //Ruta med dish name, bild och latinsk text. Samt en tillbaka knapp.
-        var html="<div class='col-md-5'><h4>"+dish.name+"</h4><img src='images/"+dish.image+"' width='70%' height='50%'></img>"+long_text+"<button id='backSearch' class='back_btn'>back to search</button>";
+        var html="<div class='col-md-5'><h4>"+dish.name+"</h4><img src='images/"+dish.image+"' width='90%' height='20%'></img>"+long_text+"<button id='backSearch' class='back_btn'>back to search</button>";
         html=html+"<h4>PREPARATION</h4><p class='preparation'>"+dish.description+"</p></div>";
         //Rutan med ingredienser osv.
         html=html+"<div class='col-md-5'><div class='big_box_ingredients'><p>INGREDIENTS FOR "+guests+" PEOPLE</p><div class='small_box_ingredients'>";
@@ -20,7 +20,7 @@ var DishView = function (container, model, dish_id, guests) {
             tha_ingredient=dish.ingredients[ingredient];
             console.log(tha_ingredient);
             //alert("image: "+"<img src='"+images/tha_dish.image+"'></img>") 
-            html=html+"<p>"+(guests*tha_ingredient.quantity)+tha_ingredient.unit+tha_ingredient.name+" SEK "+(guests*tha_ingredient.price)+"</p>";
+            html=html+"<div class='row'><p><div class='col-md-1'>"+(guests*tha_ingredient.quantity)+"</div><div class='col-md-1'>"+tha_ingredient.unit+"</div><div class='col-md-1'>"+tha_ingredient.name+"</div><div class='col-md-1'> SEK "+(guests*tha_ingredient.price)+"</p></div>";
 
         }
         html=html+"</div><button class='button' id='btn'>Add to menu</button><p>SEK "+dishPrice+"</p></div></div>";
