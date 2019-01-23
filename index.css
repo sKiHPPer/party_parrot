@@ -125,4 +125,5 @@ button {
 .big_box_ingredients {
     background-color: #ffe599;
     border: 3px solid black;
+    padding: 15px 15px;
 }
