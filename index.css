@@ -71,9 +71,12 @@ button {
 
 .search_bar {
     justify-content: space-between;
-    flex-wrap: nowrap;
-    width: 110%;
-    padding: 3% 0%;
+    width: 100%;
+    padding: 3% 5%;
+}
+
+.threebar{
+    margin-right: 30%;
 }
 
 
