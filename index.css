@@ -70,8 +70,16 @@ button {
 
 
 .search_bar {
-
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 110%;
+    padding: 3% 0%;
 }
+.three_bar {
+    margin-right: 3%;
+    margin-left:5%;
+}
+
 
 .all_dishes {
     
@@ -80,6 +88,8 @@ button {
 .btn_image {
         background-color: #ffffff;
         padding: 0% 0%;
+        margin-left: 5%;
+        width: 10%;
 
 }
 
