@@ -59,7 +59,8 @@ button {
 }
 
 .sidebar_btn{
-
+    background-color: #eeeeee;
+    display: block;
 }
 
 .search_bars {
@@ -99,6 +100,8 @@ button {
 .side_cost {
     background-color: #eeeeee;
     padding: 0.5%;
+    border-top: 3px solid black;
+
 }
 
 .side_something1 {
@@ -108,4 +111,18 @@ button {
 .side_something2 {
     display: inline-block;
     text-align: right;
+}
+
+
+.side_name {
+    display: inline-block;
+}
+
+.price {
+    display: inline-block;
+}
+
+.big_box_ingredients {
+    background-color: #f6b26b;
+    border: 3px solid black;
 }

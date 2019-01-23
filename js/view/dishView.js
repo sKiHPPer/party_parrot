@@ -6,7 +6,9 @@ var DishView = function (container, model, dish_id, guests) {
         var long_text="<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
         var dish= model.getDish(dish_id);
         var dishPrice = model.getTotalDishPrice(dish_id);
-        var html="<h4>"+dish.name+"</h4><img src='images/"+dish.image+"'></img>"+long_text;
+
+        //Ruta med dish name, bild och latinsk text. Samt en tillbaka knapp.
+        var html="<h4>"+dish.name+"</h4><img src='images/"+dish.image+"'></img>"+long_text+"<button id='backSearch' class='back_btn'>back to search</button>";
 
         //Rutan med ingredienser osv.
         html=html+"<div class='big_box_ingredients'><p>INGREDIENTS FOR "+guests+" PEOPLE</p><div class='small_box_ingredients'>";

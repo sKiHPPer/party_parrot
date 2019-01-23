@@ -10,7 +10,7 @@ var Sidebar = function (container, model, guests) {
         tha_dish=WholeMenu[dish];
         console.log(tha_dish)
         var dishPrice = model.getTotalDishPrice(tha_dish.id);
-        html=html+"<button class='sidebar_btn' id='btn'><p>"+tha_dish.name+"</p><p class='price'>"+dishPrice+"</p></button>";
+        html=html+"<button class='sidebar_btn' id='btn'><p class='side_name'>"+tha_dish.name+"</p><p class='price'>"+dishPrice+"</p></button>";
     }
 
     html=html+"<p class='price'>SEK "+TotalPrice+"<p>";
