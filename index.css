@@ -45,6 +45,7 @@ button {
 .start_latin {
     order: 0;
     text-align: center;
+    padding-bottom: 5%;
 }
 
 .start_button {
@@ -53,6 +54,11 @@ button {
 }
 
 .start_box {
+    padding: 20% 20%;
 
     justify-content: center;
+}
+
+.sidebar {
+    
 }
