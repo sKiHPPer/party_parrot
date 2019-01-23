@@ -87,8 +87,9 @@ button {
 .btn_image {
         background-color: #ffffff;
         padding: 0% 0%;
-        margin-left: 5%;
-        width: 10%;
+        margin-left:5%;
+        width: 110px;
+        height: 100px;
 
 }
 
