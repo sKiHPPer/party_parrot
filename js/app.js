@@ -14,6 +14,7 @@ $(function() {
 	var menuView = new MenuView($("#menuView"),model,type);
 	var menuView = new Sidebar($("#sidebar"),model, guests);
 	var confirmdinnerView = new ConfirmdinnerView($("#confirmdinnerView"),model, guests);
+	var printView = new PrintView($("#printView"),model, guests);
 	//var confirmHeader = new ConfirmHeader($("#confirmHeader"),guests);
 	
 	//var homeView = new HomeView($("#homeView"), model);
