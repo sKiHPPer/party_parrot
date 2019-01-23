@@ -20,7 +20,7 @@ var DishView = function (container, model, dish_id, guests) {
             tha_ingredient=dish.ingredients[ingredient];
             console.log(tha_ingredient);
             //alert("image: "+"<img src='"+images/tha_dish.image+"'></img>") 
-            html=html+"<div class='row'><p><div class='col-md-1'>"+(guests*tha_ingredient.quantity)+"</div><div class='col-md-1'>"+tha_ingredient.unit+"</div><div class='col-md-1'>"+tha_ingredient.name+"</div><div class='col-md-1'> SEK "+(guests*tha_ingredient.price)+"</p></div>";
+            html=html+"<p>"+(guests*tha_ingredient.quantity)+" "+tha_ingredient.unit+" "+tha_ingredient.name+" SEK "+(guests*tha_ingredient.price)+"</p>";
 
         }
         html=html+"</div><button class='button' id='btn'>Add to menu</button><p>SEK "+dishPrice+"</p></div></div>";
