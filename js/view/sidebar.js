@@ -8,7 +8,9 @@ var Sidebar = function (container, model, guests) {
 
     for(dish in WholeMenu){
         tha_dish=WholeMenu[dish];
-        html=html+"<button class='button' id='btn'><p>"+tha_dish.name+"</p><p class='price'>"+tha_dish.price+"</p></button>";
+        console.log(tha_dish)
+        var dishPrice = model.getTotalDishPrice(tha_dish.id);
+        html=html+"<button class='sidebar_btn' id='btn'><p>"+tha_dish.name+"</p><p class='price'>"+dishPrice+"</p></button>";
     }
 
     html=html+"<p class='price'>SEK "+TotalPrice+"<p>";

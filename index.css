@@ -38,7 +38,7 @@ button {
 #headerView {
     overflow: hidden;
     background-color: #eeeeee;
-    padding: 0.5% 0%;
+    padding: 0.5%;
     padding-bottom: 1%;
 }
 
@@ -53,6 +53,5 @@ button {
 }
 
 .start_box {
-
     justify-content: center;
 }
