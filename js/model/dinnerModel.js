@@ -28,16 +28,11 @@ var DinnerModel = function() {
 		//KLAR
 	}
 
-	this.exp = function() {
-		return dinner_menu;
-	}
-
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
 		var full_menu=[];
 		for(dish in dinner_menu){
 			var dis = this.getDish(dinner_menu[dish]);
-			//console.log(dis);
 			full_menu.push(dis);
 			}
 		return full_menu;
@@ -61,10 +56,21 @@ var DinnerModel = function() {
 		var all_ingredients = this.getAllIngredients();
 		for (dish in all_ingredients){
 			for (i in all_ingredients[dish]){
-				var ingredient = all_ingredients[dish][i]
-				console.log(ingredient);
+				var ingredient = all_ingredients[dish][i];
 				total_price=total_price+(ingredient.price*guests);
 			}
+		}
+		return total_price;
+		//KLAR
+	}
+
+	this.getTotalDishPrice = function(id) {
+		var total_price=0;
+		var dish = this.getDish(id);
+
+		for (i in dish.ingredients){
+			var ingredient = dish.ingredients[i];
+			total_price=total_price+(ingredient.price*guests);
 		}
 		return total_price;
 		//KLAR
