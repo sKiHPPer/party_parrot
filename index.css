@@ -56,6 +56,7 @@ button {
 
 .start_box {
     padding: 20% 20%;
+
     justify-content: center;
 }
 
@@ -67,6 +68,7 @@ button {
 
 }
 
+
 .search_bar {
     justify-content: space-between;
     flex-wrap: nowrap;
@@ -74,15 +76,20 @@ button {
     padding: 3% 0%;
 }
 
-.three_bar {
-    margin-right: 3%;
-}
 
 .all_dishes {
-
+    
 }
 
 .btn_image {
+        background-color: #ffffff;
+        padding: 0% 0%;
+
+}
+
+.dish_name_menu {
+    border-top: 3px solid black;
     background-color: #eeeeee;
+    margin:0%;
 
 }
