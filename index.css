@@ -74,9 +74,18 @@ button {
 }
 
 .all_dishes {
-
+    
 }
 
 .btn_image {
-        background-color: #eeeeee;
+        background-color: #ffffff;
+        padding: 0% 0%;
+
+}
+
+.dish_name_menu {
+    border-top: 3px solid black;
+    background-color: #eeeeee;
+    margin:0%;
+
 }
