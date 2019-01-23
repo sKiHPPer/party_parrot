@@ -9,7 +9,7 @@ var MenuView = function (container, model,type) {
     for(dish in AllDishes){
         tha_dish=AllDishes[dish];
         //alert("image: "+"<img src='"+images/tha_dish.image+"'></img>") 
-        html=html+"<button id='image' class='btn_image'><img src='images/"+tha_dish.image+"'></img>"+"<p class='dish_name_menu'>"+tha_dish.name+"</p></button>";
+        html=html+"<div class='btn_dish'><button id='image' class='btn_image'><img src='images/"+tha_dish.image+"'></img>"+"<button id='dish_name' class='btn_name'><p class='dish_name_menu'>"+tha_dish.name+"</p></button></button></div>";
     }
 
     document.getElementById('menuView').innerHTML=html;
