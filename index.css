@@ -1,4 +1,4 @@
-body {background-color: #eeeeee;}
+body {background-color: #ffffff;}
 
 h1 {color: #000000; font-size:50px; font-family: "Comic Sans MS"; font-weight: bold; text-align: center;}
 h2 {color: #000000; font-family: "Comic Sans MS";}
@@ -26,6 +26,21 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-  }
+}
   
-  
+
+.container {
+    display: flex;
+    margin-top: 10%;
+}
+
+.item {
+    order: 0;
+}
+
+.headerView {
+    background-color: #eeeeee;
+    padding: 20px 10px;
+
+}
+
