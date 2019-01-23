@@ -4,7 +4,7 @@ var Sidebar = function (container, model, guests) {
     var WholeMenu = model.getFullMenu();
     var TotalPrice = model.getTotalMenuPrice();
     var tha_dish='';
-    var html="<h6>MY DINNER</h6><p>People</p><div class='input-guests'><input type='number' min='0' max='40' id='number_guests' value='"+guests+"'></div><div class='side_cost'><p class='side_something'>Dish Name</p><p class='side_something'>Cost</p></div>";
+    var html="<h6>MY DINNER</h6><p>People</p><div class='input-guests'><input type='number' min='0' max='40' id='number_guests' value='"+guests+"'></div><div class='side_cost'><p class='side_something1'>Dish Name</p><p class='side_something2'>Cost</p></div>";
 
     for(dish in WholeMenu){
         tha_dish=WholeMenu[dish];
