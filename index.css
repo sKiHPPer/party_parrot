@@ -72,9 +72,8 @@ button {
 .search_bar {
     border-top: 3px solid #b3b3b3;
     justify-content: space-between;
-    width: 100%;
+    width: 165%;
     padding: 3% 5%;
-    border-right: 3px solid black;
 
 }
 
@@ -85,6 +84,7 @@ button {
 
 .all_dishes {
     border-top: 3px solid black;
+    width: 165%;
 }
 
 .btn_image {
@@ -92,8 +92,8 @@ button {
         padding: 0% 0%;
         margin-left:5%;
         margin-top:10%;
-        height: 100%;
-        width: 30%;
+        height: 70%;
+        width: 20%;
 
 }
 
@@ -105,5 +105,15 @@ button {
 }
 
 .side_cost {
-    
+    background-color: #eeeeee;
+    padding: 0.5%;
+}
+
+.side_something1 {
+    display: inline-block;
+}
+
+.side_something2 {
+    display: inline-block;
+    text-align: right;
 }
