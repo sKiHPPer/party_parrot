@@ -43,9 +43,15 @@ button {
 }
 
 .start_latin {
+    order: 0;
+    text-align: center;
+}
+
+.start_button {
+    order: 1;
     text-align: center;
 }
 
 .start_box {
-
+    justify-content: center;
 }
