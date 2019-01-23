@@ -27,14 +27,8 @@ button {
     cursor: pointer;
 }
 
-.container {
+.containers {
     display: flex;
-    margin-left: 0%;
-    margin-right: 0%;
-}
-
-.item {
-    order: 0;
 }
 
 #headerView {
@@ -57,7 +51,6 @@ button {
 
 .start_box {
     padding: 20% 20%;
-
     justify-content: center;
 }
 
@@ -69,10 +62,9 @@ button {
 
 }
 
-.search_bar {
+.search_bars {
     border-top: 3px solid #b3b3b3;
     justify-content: space-between;
-    width: 165%;
     padding: 3% 5%;
 
 }
