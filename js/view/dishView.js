@@ -23,7 +23,7 @@ var DishView = function (container, model, dish_id, guests) {
             html=html+"<p>"+(guests*tha_ingredient.quantity)+" "+tha_ingredient.unit+" "+tha_ingredient.name+" SEK "+(guests*tha_ingredient.price)+"</p>";
 
         }
-        html=html+"</div><button class='button' id='btn'>Add to menu</button><p class='price'>SEK "+dishPrice+"</p></div></div>";
+        html=html+"</div><button class='button' id='btn'>Add to menu</button><p class='price'> SEK "+dishPrice+"</p></div></div>";
         //Preparation delen
     
         document.getElementById('dishView').innerHTML=html;
