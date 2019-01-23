@@ -9,7 +9,7 @@ var DishView = function (container, model, dish_id, guests) {
         var total_price=0;
 
         //Rutan med ingredienser osv.
-        html=html+"<div class='big_box_ingredients'><p>INGREDIENTS FOR "+guests+" PEOPLE</p><div class='small_box_ingredients'>"
+        html=html+"<div class='big_box_ingredients'><p>INGREDIENTS FOR "+guests+" PEOPLE</p><div class='small_box_ingredients'>";
         console.log(dish.ingredients);
         console.log('hej');
 
