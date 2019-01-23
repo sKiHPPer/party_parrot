@@ -68,7 +68,9 @@ button {
 }
 
 .search_bar {
-    justify-content: flex-start;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 110%;
     padding: 3% 0%;
 }
 
