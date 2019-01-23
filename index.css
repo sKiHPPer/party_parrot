@@ -1,4 +1,4 @@
-h1 {color: #000000; font-size:50px; font-family: "Comic Sans MS"; font-weight: bold; text-align: center;}
+h1 {color: #000000; font-size:300%; font-family: "Comic Sans MS"; font-weight: bold; text-align: center;}
 h2 {color: #000000; font-family: "Comic Sans MS";}
 h3 {color: #000000; font-family: "Comic Sans MS"; text-align: center; font-size: 30px;}
 h5 {color: #000000; font-family: "Comic Sans MS"; font-size: 15px;}
@@ -38,6 +38,14 @@ button {
 #headerView {
     overflow: hidden;
     background-color: #eeeeee;
-    padding: 30px 20px;
+    padding: 10px 18px;
+    padding-bottom: 30px;
 }
 
+.start_latin {
+    text-align: center;
+}
+
+.start_box {
+
+}
