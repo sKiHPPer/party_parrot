@@ -1,4 +1,4 @@
-h1 {color: #000000; font-size:50px; font-family: "Comic Sans MS"; font-weight: bold; text-align: center;}
+h1 {color: #000000; font-size:300%; font-family: "Comic Sans MS"; font-weight: bold; text-align: center;}
 h2 {color: #000000; font-family: "Comic Sans MS";}
 h3 {color: #000000; font-family: "Comic Sans MS"; text-align: center; font-size: 30px;}
 h5 {color: #000000; font-family: "Comic Sans MS"; font-size: 15px;}
@@ -41,3 +41,7 @@ button {
     padding: 30px 20px;
 }
 
+
+.start_box {
+    
+}
