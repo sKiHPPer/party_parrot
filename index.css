@@ -61,7 +61,7 @@ button {
 }
 
 .sidebar {
-    
+    border: 3px solid black;
 }
 
 .sidebar_btn{
@@ -73,6 +73,7 @@ button {
     justify-content: space-between;
     width: 100%;
     padding: 3% 5%;
+
 }
 
 .threebar{
@@ -81,15 +82,16 @@ button {
 
 
 .all_dishes {
-    
+    border-top: 3px solid black;
 }
 
 .btn_image {
         background-color: #ffffff;
         padding: 0% 0%;
         margin-left:5%;
-        width: 110px;
-        height: 100px;
+        height: 100%;
+        width: 30%;
+
 
 }
 
