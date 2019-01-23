@@ -8,10 +8,10 @@ var DishView = function (container, model, dish_id, guests) {
         var dishPrice = model.getTotalDishPrice(dish_id);
 
         //Ruta med dish name, bild och latinsk text. Samt en tillbaka knapp.
-        var html="<h4>"+dish.name+"</h4><img src='images/"+dish.image+"'></img>"+long_text+"<button id='backSearch' class='back_btn'>back to search</button>";
-
+        var html="<div class='col-md-5'><h4>"+dish.name+"</h4><img src='images/"+dish.image+"' width='70%' height='50%'></img>"+long_text+"<button id='backSearch' class='back_btn'>back to search</button>";
+        html=html+"<h4>PREPARATION</h4><p class='preparation'>"+dish.description+"</p></div>";
         //Rutan med ingredienser osv.
-        html=html+"<div class='big_box_ingredients'><p>INGREDIENTS FOR "+guests+" PEOPLE</p><div class='small_box_ingredients'>";
+        html=html+"<div class='col-md-5'><div class='big_box_ingredients'><p>INGREDIENTS FOR "+guests+" PEOPLE</p><div class='small_box_ingredients'>";
         console.log(dish.ingredients);
         console.log('hej');
 
@@ -23,9 +23,8 @@ var DishView = function (container, model, dish_id, guests) {
             html=html+"<p>"+(guests*tha_ingredient.quantity)+tha_ingredient.unit+tha_ingredient.name+" SEK "+(guests*tha_ingredient.price)+"</p>";
 
         }
-        html=html+"</div><button class='button' id='btn'>Add to menu</button><p>SEK "+dishPrice+"</p></div>";
+        html=html+"</div><button class='button' id='btn'>Add to menu</button><p>SEK "+dishPrice+"</p></div></div>";
         //Preparation delen
-        html=html+"<h4>PREPARATION</h4><p class='preparation'>"+dish.description+"</p>";
     
         document.getElementById('dishView').innerHTML=html;
         }
