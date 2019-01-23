@@ -2,7 +2,7 @@ h1 {color: #000000; font-size:300%; font-family: "Comic Sans MS"; font-weight: b
 h2 {color: #000000; font-family: "Comic Sans MS";}
 h3 {color: #000000; font-family: "Comic Sans MS"; text-align: center; font-size: 30px;}
 h5 {color: #000000; font-family: "Comic Sans MS"; font-size: 15px;}
-h6 {color: #000000; font-family: "Comic Sans MS"; font-size: 20px; display: block; margin-bottom: 0%; margin-top: 0%; font-weight: bold;}
+h6 {color: #000000; font-family: "Comic Sans MS"; font-size: 20px; margin-bottom: 0%; margin-top: 0%; font-weight: bold;}
 p {color: #000000; font-family: "Comic Sans MS";}
 
 input:not(:checked) ~ .add1{display: none; white-space: pre-line;}
@@ -55,13 +55,13 @@ button {
 }
 
 .sidebar {
+    flex-direction: column;
+    justify-content: center;
     border: 3px solid black;
 }
 
 .sidebar_btn{
     background-color: #eeeeee;
-    display: block;
-    
 }
 
 .search_bars {
@@ -103,7 +103,7 @@ button {
     padding: 0.5%;
     border-top: 3px solid black;
     border-bottom: 3px solid black;
-
+    justify-content: center;
 }
 
 .side_something1 {
