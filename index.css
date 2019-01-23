@@ -13,7 +13,7 @@ input:not(:checked) ~ .add2{display: none; white-space: pre-line;}
 .view { display: flex; justify-content: left; margin-top: 10%;}
 
 
-button {
+button { 
     text-align: center;
     background-color: #f6b26b;
     font-family: "Comic Sans MS", sans-serif;
