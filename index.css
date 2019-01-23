@@ -73,6 +73,7 @@ button {
     justify-content: space-between;
     width: 100%;
     padding: 3% 5%;
+    border-right: 3px solid black;
 
 }
 
@@ -89,6 +90,7 @@ button {
         background-color: #ffffff;
         padding: 0% 0%;
         margin-left:5%;
+        margin-top:10%;
         height: 100%;
         width: 30%;
 
