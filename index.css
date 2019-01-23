@@ -38,8 +38,8 @@ button {
 #headerView {
     overflow: hidden;
     background-color: #eeeeee;
-    padding: 10px 18px;
-    padding-bottom: 30px;
+    padding: 0.5%;
+    padding-bottom: 1%;
 }
 
 .start_latin {
