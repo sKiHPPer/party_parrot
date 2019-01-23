@@ -2,7 +2,8 @@ $(function() {
 	//We instantiate our model
 	var model = new DinnerModel();
 	var type='starter';
-	var guests=1;
+	var guests=2;
+	model.setNumberOfGuests(guests);
 	var dish_id=1;
 	
 	// And create the instance of ExampleView
