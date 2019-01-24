@@ -2,7 +2,7 @@ $(function() {
 	//We instantiate our model
 	var model = new DinnerModel();
 	var type='starter';
-	var guests=10;
+	var guests=5;
 	model.setNumberOfGuests(guests);
 	var dish_id=1;
 	
@@ -15,6 +15,7 @@ $(function() {
 	var menuView = new Sidebar($("#sidebar"),model, guests);
 	var confirmdinnerView = new ConfirmdinnerView($("#confirmdinnerView"),model, guests);
 	var printView = new PrintView($("#printView"),model, guests);
+	var MenuPrice = new MenuTable($("#MenuPrice"),model, guests);
 	//var confirmHeader = new ConfirmHeader($("#confirmHeader"),guests);
 	
 	//var homeView = new HomeView($("#homeView"), model);

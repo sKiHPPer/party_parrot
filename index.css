@@ -133,10 +133,12 @@ button {
 
 .side_name {
     display: inline-block;
+    color: darkred;
 }
 
 .price {
     display: inline-block;
+    color: darkred;
 }
 
 .big_box_ingredients {
@@ -153,4 +155,8 @@ button {
 
 #my_dinner {
     border-bottom: 3px solid black;
+}
+
+.inline {
+    display: inline-block;
 }

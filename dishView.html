@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="index.css"/>
+		<link rel="stylesheet" type="text/css" href="header.css"/>
 
   </head>
   <body>
@@ -24,9 +25,16 @@
 		
 		<div class="row">
 			<div class="col-md-2">
-				<div class="sidebar">
-					<span id="sidebar"></span>
-				<!--Här ska Sidebaren som syns på alla sidor utom startsidan+confirmdinnerView vara. Den ska uppdateras när menyn uppdateras-->
+				<div class="sidebar text-center">						
+			<!--Här ska Sidebaren som syns på alla sidor utom startsidan+confirmdinnerView vara. Den ska uppdateras när menyn uppdateras-->
+					<div>
+						<h6 class="big_menu">My dinner </h6>  <i class="icon-align-justify"></i>
+						<div class="small_menu"><a class="btn btn-block" data-toggle="collapse" href="#menutable" role="button" aria-expanded="false" aria-controls="collapseExample"><h6 class="inline">My dinner</h6><span id="MenuPrice"></span></a>
+						</div>
+							<div class="menuTable" id="menutable">
+								<span id="sidebar"></span>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -59,7 +67,8 @@
 	<script src="js/view/sidebar.js"></script>
 	<script src="js/view/confirmdinnerView.js"></script>
 	<script src="js/view/printView.js"></script>
-	
+	<script src="js/view/totalPriceView.js"></script>
+
 	<!-- TODO: Here you should include JS code for your other views -->
   </body>
 </html>
