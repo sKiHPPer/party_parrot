@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="index.css"/>
+		<link rel="stylesheet" type="text/css" href="header.css"/>
 
   </head>
   <body>
@@ -20,38 +21,40 @@
 	</div>
 
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-2">
-				<div class="sidebar text-center">
-						<span id="sidebar"></span>
-					<!--Här ska Sidebaren som syns på alla sidor utom startsidan+confirmdinnerView vara. Den ska uppdateras när menyn uppdateras-->
-				</div>
-			</div>
-
-			<div class="col-md-10">
-				<div class="dynamicView">
-					<div class="row">
-						<div class="search_bars">
-							<!--Här ska menyn med alla bilder och rätter finnas(bilderna ska vara knappar eller på något sätt länka oss till andra sidor)-->
-							<h6>FIND A DISH</h6>
-							
-							<input class="three_bar" type="text" placeholder="Enter key words">
-								<select class="three_bar" id="sel1">
-									<option>All</option>
-									<option>Main Course</option>
-									<option>Side Dish</option>
-									<option>Dessert</option>
-									<option>Appetizer</option>
-									<option>Starter</option>
-								</select>
-							<button id="Search" class="three_bar">Search</button>
-							
-						</div>
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-md-2">
+					<div class="sidebar text-center">
+							<span id="sidebar"></span>
+						<!--Här ska Sidebaren som syns på alla sidor utom startsidan+confirmdinnerView vara. Den ska uppdateras när menyn uppdateras-->
 					</div>
-					<div class="row">
-					<!--Här ska första knappen finnas som ger oss möjligheten att se menuView-->
-						<div class="all_dishes">
-							<span id="menuView"></span>
+				</div>
+
+				<div class="col-md-10 dynamicView">
+					<div class="dynamicView">
+						<div class="row">
+							<div class="search_bars">
+								<!--Här ska menyn med alla bilder och rätter finnas(bilderna ska vara knappar eller på något sätt länka oss till andra sidor)-->
+								<h6>FIND A DISH</h6>
+								
+								<input class="three_bar" type="text" placeholder="Enter key words">
+									<select class="three_bar" id="sel1">
+										<option>All</option>
+										<option>Main Course</option>
+										<option>Side Dish</option>
+										<option>Dessert</option>
+										<option>Appetizer</option>
+										<option>Starter</option>
+									</select>
+								<button id="Search" class="three_bar">Search</button>
+								
+							</div>
+						</div>
+						<div class="row">
+						<!--Här ska första knappen finnas som ger oss möjligheten att se menuView-->
+							<div class="all_dishes">
+								<span id="menuView"></span>
+							</div>
 						</div>
 					</div>
 				</div>
