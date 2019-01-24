@@ -21,3 +21,9 @@
     .dynamicView { order: 3;    }
     .searchbars  { visibility: hidden !important; }
   }
+
+  @media all and (max-width: 992px){
+      .menuTable{
+          display:none;
+      }
+  }
