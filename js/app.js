@@ -1,7 +1,7 @@
 $(function() {
 	//We instantiate our model
 	var model = new DinnerModel();
-	var type='dessert';
+	var type='starter';
 	var guests=10;
 	model.setNumberOfGuests(guests);
 	var dish_id=1;
