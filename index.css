@@ -31,13 +31,17 @@ button {
     padding: 0% 0%;
     height: 160px;
     width: 120px;
+    margin-left: 2%;
+    margin-right: 2%;
+
 }
 
 .dish_name_menu {
     border-top: 3px solid black;
     margin:0%;
     height: 40px;
-    width: 110px;
+    width: 114px;
+    vertical-align: middle;
 }
 
 
@@ -84,11 +88,14 @@ button {
 .sidebar_btn{
     background-color: #eeeeee;
 }
+.nopad {
+    padding: 0px 0px;
+}
 
 .search_bars {
     border-top: 3px solid #b3b3b3;
     justify-content: space-between;
-    padding: 3% 5%;
+    padding: 2% 2%;
 
 }
 
