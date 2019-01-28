@@ -8,7 +8,7 @@ var DinnerModel = function() {
 		this.dishes=dishesConst; // to be replaced in lab 3
 	}
 
-	var dinner_menu=[];
+	let dinner_menu=[];
 
 	setNumberOfGuests(num){
 		numberOfGuests=num;
@@ -23,8 +23,8 @@ var DinnerModel = function() {
 	//Returns the dish that is on the menu for selected type 
 	getSelectedDish(type) {
 		for(dish in dinner_menu){
-			var dish_id = dinner_menu[dish];
-			var dish_type=this.getDish(dish_id);
+			let dish_id = dinner_menu[dish];
+			let dish_type=this.getDish(dish_id);
 			if(dish_type.type == typett) {
 				return dish_type.id;
 			}
@@ -35,9 +35,9 @@ var DinnerModel = function() {
 
 	//Returns all the dishes on the menu.
 	getFullMenu() {
-		var full_menu=[];
+		let full_menu=[];
 		for(dish in dinner_menu){
-			var dis = this.getDish(dinner_menu[dish]);
+			let dis = this.getDish(dinner_menu[dish]);
 			full_menu.push(dis);
 			}
 		return full_menu;
