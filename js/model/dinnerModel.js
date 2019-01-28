@@ -27,6 +27,7 @@ var DinnerModel = function() {
 		}
 		//KLAR
 	}
+	
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
