@@ -2,22 +2,26 @@
 var DinnerModel = function() {
 	//TODO Lab 1 implement the data structure that will hold number of guest
 	// and selected dishes for the dinner menu
+	
+	constructor(){
+		this.numberOfGuests=0;
+		this.dishes=dishesConst; // to be replaced in lab 3
+	}
 
-	var guests=0;
-	var dinner_menu=[1,2];
+	var dinner_menu=[];
 
-	this.setNumberOfGuests = function(num) {
-		guests=num;
+	setNumberOfGuests(num){
+		numberOfGuests=num;
 		//KLAR
 	}
 	
-	this.getNumberOfGuests = function() {
-		return guests;
+	getNumberOfGuests() {
+		return numberOfGuests;
 		//KLAR
 	}
 
 	//Returns the dish that is on the menu for selected type 
-	this.getSelectedDish = function(typett) {
+	getSelectedDish(type) {
 		for(dish in dinner_menu){
 			var dish_id = dinner_menu[dish];
 			var dish_type=this.getDish(dish_id);
@@ -30,7 +34,7 @@ var DinnerModel = function() {
 	
 
 	//Returns all the dishes on the menu.
-	this.getFullMenu = function() {
+	getFullMenu() {
 		var full_menu=[];
 		for(dish in dinner_menu){
 			var dis = this.getDish(dinner_menu[dish]);
@@ -41,7 +45,7 @@ var DinnerModel = function() {
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
-	this.getAllIngredients = function() {
+	getAllIngredients() {
 		var full_menu = this.getFullMenu();
 		var all_ingredients=[];
 		for(dish in full_menu){
@@ -52,26 +56,26 @@ var DinnerModel = function() {
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
-	this.getTotalMenuPrice = function() {
+	getTotalMenuPrice() {
 		var total_price=0;
 		var all_ingredients = this.getAllIngredients();
 		for (dish in all_ingredients){
 			for (i in all_ingredients[dish]){
 				var ingredient = all_ingredients[dish][i];
-				total_price=total_price+(ingredient.price*guests);
+				total_price=total_price+(ingredient.price*numberOfGuests);
 			}
 		}
 		return total_price;
 		//KLAR
 	}
 
-	this.getTotalDishPrice = function(id) {
+	getTotalDishPrice(id) {
 		var total_price=0;
 		var dish = this.getDish(id);
 
 		for (i in dish.ingredients){
 			var ingredient = dish.ingredients[i];
-			total_price=total_price+(ingredient.price*guests);
+			total_price=total_price+(ingredient.price*numberOfGuests);
 		}
 		return total_price;
 		//KLAR
@@ -80,7 +84,7 @@ var DinnerModel = function() {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 
-	this.addDishToMenu = function(id) {
+	addDishToMenu(id) {
 		var new_dish=this.getDish(id);
 		var type=new_dish.type;
 		var old_dish=this.getSelectedDish(type);
@@ -92,7 +96,7 @@ var DinnerModel = function() {
 	}
 
 	//Removes dish from menu
-	this.removeDishFromMenu = function(ids) {
+	removeDishFromMenu(id) {
 		for( var i = 0; i < dinner_menu.length; i++){
 			if ( dinner_menu[i] === ids) {
 			  dinner_menu.splice(i, 1);
@@ -104,7 +108,7 @@ var DinnerModel = function() {
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
-	this.getAllDishes = function (type,filter) {
+	getAllDishes(type,filter) {
 	  return dishes.filter(function(dish) {
 		var found = true;
 		if(filter){
@@ -124,13 +128,15 @@ var DinnerModel = function() {
 	}
 
 	//function that returns a dish of specific ID
-	this.getDish = function (id) {
-	  for(key in dishes){
-			if(dishes[key].id == id) {
-				return dishes[key];
+	getDish (id) {
+	    for(let key in this.dishes){
+		if(this.dishes[key].id == id) {
+		    return this.dishes[key];
 			}
+	    }
+	    return undefined;
 		}
-	}
+}
 
 
 	// the dishes variable contains an array of all the 
@@ -141,7 +147,7 @@ var DinnerModel = function() {
 	// defining the unit i.e. "g", "slices", "ml". Unit
 	// can sometimes be empty like in the example of eggs where
 	// you just say "5 eggs" and not "5 pieces of eggs" or anything else.
-	var dishes = [{
+	const dishesConst = [{
 		'id':1,
 		'name':'French toast',
 		'type':'starter',
