@@ -1,4 +1,13 @@
 
+
+class menuController{
+    
+    constructor(generalController){
+        this.gc = generalController
+    }
+
+    this.gc.showDishView();
+}
 var MenuView = function (container, model) {
 
     if(document.getElementById('menuView')){

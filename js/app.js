@@ -1,7 +1,20 @@
+class generalController {
+
+	constructor(){
+		//skapa controllers som skapar views typ DishController()
+	}
+	showHomeview(){
+		//Visa homeView.js
+		this.showHomeview.show()
+	}
+  }
+
 $(function() {
 	//We instantiate our model
 	var model = new DinnerModel();
 	
+	var stateController = new generalController();
+	stateController.showHomeview();
 	// And create the instance of ExampleView
 
 	var exampleView = new ExampleView($("#exampleView"), model);
@@ -30,10 +43,5 @@ $(function() {
 });
 
 
-class generalController {
-	constructor(height, width) {
-	  this.height = height;
-	  this.width = width;
-	}
-  }
+
   
