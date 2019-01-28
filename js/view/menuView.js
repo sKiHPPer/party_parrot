@@ -1,8 +1,8 @@
 
-var MenuView = function (container, model,type) {
+var MenuView = function (container, model) {
 
     if(document.getElementById('menuView')){
-    var AllDishes = model.getAllDishes(type);
+    var AllDishes = model.getAllDishes("starter");
     var tha_dish='';
     var html='';
 

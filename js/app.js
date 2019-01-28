@@ -1,21 +1,17 @@
 $(function() {
 	//We instantiate our model
 	var model = new DinnerModel();
-	var type='starter';
-	var guests=5;
-	model.setNumberOfGuests(guests);
-	var dish_id=1;
 	
 	// And create the instance of ExampleView
 
 	var exampleView = new ExampleView($("#exampleView"), model);
 	var headerView = new HeaderView($("#headerView"), model);
-	var dishView = new DishView($("#dishView"), model,dish_id, guests);
-	var menuView = new MenuView($("#menuView"),model,type);
-	var menuView = new Sidebar($("#sidebar"),model, guests);
-	var confirmdinnerView = new ConfirmdinnerView($("#confirmdinnerView"),model, guests);
-	var printView = new PrintView($("#printView"),model, guests);
-	var MenuPrice = new MenuTable($("#MenuPrice"),model, guests);
+	var dishView = new DishView($("#dishView"), model);
+	var menuView = new MenuView($("#menuView"),model);
+	var menuView = new Sidebar($("#sidebar"),model);
+	var confirmdinnerView = new ConfirmdinnerView($("#confirmdinnerView"),model);
+	var printView = new PrintView($("#printView"),model);
+	var MenuPrice = new MenuTable($("#MenuPrice"),model);
 	//var confirmHeader = new ConfirmHeader($("#confirmHeader"),guests);
 	
 	//var homeView = new HomeView($("#homeView"), model);
@@ -32,3 +28,12 @@ $(function() {
 	 */
 
 });
+
+
+class generalController {
+	constructor(height, width) {
+	  this.height = height;
+	  this.width = width;
+	}
+  }
+  

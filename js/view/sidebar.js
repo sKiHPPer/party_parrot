@@ -1,8 +1,9 @@
-var Sidebar = function (container, model, guests) {
+var Sidebar = function (container, model) {
 
     if(document.getElementById('sidebar')){
     var WholeMenu = model.getFullMenu();
     var TotalPrice = model.getTotalMenuPrice();
+    var guests = model.getNumberOfGuests();
     var tha_dish='';
     var p = document.createElement("p");
     p.className = "input_guests";

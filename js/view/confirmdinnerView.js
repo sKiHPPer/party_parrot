@@ -1,8 +1,9 @@
-var ConfirmdinnerView = function (container, model, guests) {
+var ConfirmdinnerView = function (container, model) {
     
     if(document.getElementById('confirmdinnerView')){
         var fullMenu = model.getFullMenu();
         var totalPrice= model.getTotalMenuPrice();
+        var guests = model.getNumberOfGuests();
         console.log(fullMenu);
         var tha_dish='';
 
