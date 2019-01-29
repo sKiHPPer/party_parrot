@@ -7,14 +7,12 @@ class generalController {
 		this.container = document.getElementById("content");
 		console.log(document.getElementById("content"));
 		this.headerView = new HeaderView($("#headerView"), model);
-
 		this.showHomeview();
 	}
 	showHomeview() {
 		//Visa homeView.js
 		this.hide();
-		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
-		this.dishView = new HomeView(this.container, this.dataModel);
+		this.homeView = new HomeView(this.container, this.dataModel);
 
 	}
 
@@ -22,37 +20,32 @@ class generalController {
 		this.container.innerHTML = "";
 	}
 
-	showHeaderview() {
-		//Visa headerView.js
-
-	}
 	showDishview() {
 		//Visa dishView.js
+		this.hide();
+		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
+		this.dishView = new DishView(this.container, this.dataModel);
 
 	}
 
 	showMenuview() {
 		//Visa menuView.js
+		this.hide();
+		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
+		this.dishView = new DishView(this.container, this.dataModel);
 
 	}
 
-	showSidebarview() {
-		//Visa sidebar.js
-
-	}
 
 	showConfirmdinnerview() {
 		//Visa confirmdinner.js
+		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
 
 	}
 
 	showPrintview() {
 		//Visa printView.js
-
-	}
-
-	showMenupriceview() {
-		//Visa menuPriceView.js
+		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
 
 	}
 
