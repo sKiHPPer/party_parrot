@@ -36,5 +36,5 @@ var Sidebar = function (container, model) {
     parent.appendChild(inp_guests);
 
     }
-	
+
 }
