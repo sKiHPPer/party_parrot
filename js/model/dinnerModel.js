@@ -47,8 +47,8 @@ class DinnerModel{
 
 	//Returns all ingredients for all the dishes on the menu.
 	getAllIngredients() {
-		var full_menu = this.getFullMenu();
-		var all_ingredients=[];
+		let full_menu = this.getFullMenu();
+		let all_ingredients=[];
 		for(dish in full_menu){
 			all_ingredients.push(full_menu[dish].ingredients);
 		}
@@ -58,12 +58,13 @@ class DinnerModel{
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	getTotalMenuPrice() {
-		var total_price=0;
-		var all_ingredients = this.getAllIngredients();
+		let total_price=0;
+		let all_ingredients = this.getAllIngredients();
+		let i;
 		for (dish in all_ingredients){
 			for (i in all_ingredients[dish]){
-				var ingredient = all_ingredients[dish][i];
-				total_price=total_price+(ingredient.price*numberOfGuests);
+				let ingredient = all_ingredients[dish][i];
+				total_price=total_price+(ingredient.price*this.numberOfGuests);
 			}
 		}
 		return total_price;
@@ -71,12 +72,13 @@ class DinnerModel{
 	}
 
 	getTotalDishPrice(id) {
-		var total_price=0;
-		var dish = this.getDish(id);
+		let total_price=0;
+		let dish = this.getDish(id);
+		let i;
 
 		for (i in dish.ingredients){
-			var ingredient = dish.ingredients[i];
-			total_price=total_price+(ingredient.price*numberOfGuests);
+			let ingredient = dish.ingredients[i];
+			total_price=total_price+(ingredient.price*this.numberOfGuests);
 		}
 		return total_price;
 		//KLAR
@@ -86,9 +88,9 @@ class DinnerModel{
 	//it is removed from the menu and the new one added.
 
 	addDishToMenu(id) {
-		var new_dish=this.getDish(id);
-		var type=new_dish.type;
-		var old_dish=this.getSelectedDish(type);
+		let new_dish=this.getDish(id);
+		let type=new_dish.type;
+		let old_dish=this.getSelectedDish(type);
 		if(typeof old_dish !== 'undefined'){
 			this.removeDishFromMenu(old_dish);
 		}
@@ -98,7 +100,7 @@ class DinnerModel{
 
 	//Removes dish from menu
 	removeDishFromMenu(id) {
-		for( var i = 0; i < this.dinner_menu.length; i++){
+		for(let i = 0; i < this.dinner_menu.length; i++){
 			if ( this.dinner_menu[i] === ids) {
 			  this.dinner_menu.splice(i, 1);
 			}
@@ -111,7 +113,7 @@ class DinnerModel{
 	//if you don't pass any filter all the dishes will be returned
 	getAllDishes(type,filter) {
 	  return this.dishes.filter(function(dish) {
-		var found = true;
+		let found = true;
 		if(filter){
 			found = false;
 			dish.ingredients.forEach(function(ingredient) {
@@ -140,7 +142,7 @@ class DinnerModel{
 }
 
 
-	// the dishes variable contains an array of all the 
+	// the dishes letiable contains an array of all the 
 	// dishes in the database. each dish has id, name, type,
 	// image (name of the image file), description and
 	// array of ingredients. Each ingredient has name, 
