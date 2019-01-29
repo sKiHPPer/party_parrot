@@ -10,22 +10,14 @@ class generalController {
 		this.showMenuview();
 	}
 
-	showHomeview() {
-		//Visa homeView.js
-		this.hide();
-		this.homeController = new HomeController(this.container, this, this.dataModel);
-
-	}
-
 	hide() {
 		this.container.innerHTML = "";
 	}
 
-	showDishview() {
-		//Visa dishView.js
+	showHomeview() {
+		//Visa homeView.js
 		this.hide();
-		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
-		this.dishView = new DishView(this.container, this.dataModel);
+		this.homeController = new HomeController(this.container, this, this.dataModel);
 
 	}
 
@@ -37,6 +29,13 @@ class generalController {
 
 	}
 
+	showDishview() {
+		//Visa dishView.js
+		this.hide();
+		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
+		this.dishView = new DishView(this.container, this.dataModel);
+
+	}
 
 	showConfirmdinnerview() {
 		//Visa confirmdinner.js
