@@ -1,67 +1,67 @@
 class generalController {
 
 
-	constructor(model){
+	constructor(model) {
 		this.dataModel = model;
 		//skapa controllers som skapar views typ DishController()
 		this.container = document.getElementById("content");
 		console.log(document.getElementById("content"));
 		this.headerView = new HeaderView($("#headerView"), model);
-		
+
 		this.showHomeview();
 	}
-	showHomeview(){
+	showHomeview() {
 		//Visa homeView.js
 		this.hide();
-		this.sidebarView = new Sidebar($("#sidebar"),this.dataModel);
-		this.dishView= new HomeView(this.container, this.dataModel);
-		
+		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
+		this.dishView = new HomeView(this.container, this.dataModel);
+
 	}
 
-	hide(){
+	hide() {
 		this.container.innerHTML = "";
 	}
 
-	showHeaderview(){
+	showHeaderview() {
 		//Visa headerView.js
-		
+
 	}
-	showDishview(){
+	showDishview() {
 		//Visa dishView.js
-		
+
 	}
 
-	showMenuview(){
+	showMenuview() {
 		//Visa menuView.js
-		
+
 	}
 
-	showSidebarview(){
+	showSidebarview() {
 		//Visa sidebar.js
-		
+
 	}
 
-	showConfirmdinnerview(){
+	showConfirmdinnerview() {
 		//Visa confirmdinner.js
-		
+
 	}
 
-	showPrintview(){
+	showPrintview() {
 		//Visa printView.js
-		
+
 	}
 
-	showMenupriceview(){
+	showMenupriceview() {
 		//Visa menuPriceView.js
-		
+
 	}
 
-  }
+}
 
-  window.onload = function() {
+window.onload = function () {
 	//We instantiate our model
 	var model = new DinnerModel();
-	
+
 	var stateController = new generalController(model);
 
 	// And create the instance of ExampleView
@@ -75,7 +75,7 @@ class generalController {
 	//var printView = new PrintView($("#printView"),model);
 	//var MenuPrice = new MenuTable($("#MenuPrice"),model);
 	//var confirmHeader = new ConfirmHeader($("#confirmHeader"),guests);
-	
+
 	//var homeView = new HomeView($("#homeView"), model);
 	//var confirmdinnerView = new ConfirmdinnerView($("#confirmdinnerView"), model);
 	//var menuView = new MenuView($("#menuView"), model);
@@ -93,4 +93,3 @@ class generalController {
 
 
 
-  
