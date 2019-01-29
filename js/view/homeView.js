@@ -1,18 +1,24 @@
 var HomeView = function (container, model) {
-    
-    model.long_text;
-    <div class="start_button">
-				<button id="create_dinner" class="btn">Create dinner</button>
-	</div>
 
+    var latin = model.long_text;
+
+    var start_box = document.createElement("div");
+    start_box.className = "start_box";
+    var p = document.createElement("p");
+    p.className = "start_latin";
+    p.innerHTML = model.long_text;
     var div = document.createElement("div");
     div.className = "start_button";
     var button = document.createElement("button");
-    button.className="btn";
+    button.className = "btn";
     button.innerHTML = "Create dinner";
-    container.innerHTML=html;
 
+    start_box.appendChild(p);
     div.appendChild(button);
-    container.appendChild(div);
+    start_box.appendChild(div);
+    container.appendChild(start_box);
+    //container.appendChild(p);
+    
+    //container.appendChild(div);
 }
- 
+

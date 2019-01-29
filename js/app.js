@@ -1,67 +1,73 @@
 class generalController {
 
 
-	constructor(model){
+	constructor(model) {
 		this.dataModel = model;
 		//skapa controllers som skapar views typ DishController()
 		this.container = document.getElementById("content");
 		console.log(document.getElementById("content"));
 		this.headerView = new HeaderView($("#headerView"), model);
-		
+
 		this.showHomeview();
 	}
-	showHomeview(){
+	showHomeview() {
 		//Visa homeView.js
 		this.hide();
-		this.sidebarView = new Sidebar($("#sidebar"),this.dataModel);
-		this.dishView= new HomeView(this.container, this.dataModel);
-		
+		this.dishView = new HomeView(this.container, this.dataModel);
+
 	}
 
-	hide(){
+	hide() {
 		this.container.innerHTML = "";
 	}
 
-	showHeaderview(){
+	showHeaderview() {
 		//Visa headerView.js
-		
+		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
+
 	}
-	showDishview(){
+	showDishview() {
 		//Visa dishView.js
-		
+		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
+
 	}
 
-	showMenuview(){
+	showMenuview() {
 		//Visa menuView.js
-		
+		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
+
 	}
 
-	showSidebarview(){
+	showSidebarview() {
 		//Visa sidebar.js
-		
+		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
+
 	}
 
-	showConfirmdinnerview(){
+	showConfirmdinnerview() {
 		//Visa confirmdinner.js
-		
+		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
+
 	}
 
-	showPrintview(){
+	showPrintview() {
 		//Visa printView.js
-		
+		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
+
 	}
 
-	showMenupriceview(){
+	showMenupriceview() {
 		//Visa menuPriceView.js
-		
+		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
+
 	}
 
-  }
+}
 
-  window.onload = function() {
+window.onload = function () {
 	//We instantiate our model
 	var model = new DinnerModel();
-	
+
 	var stateController = new generalController(model);
 
 	// And create the instance of ExampleView
@@ -75,7 +81,7 @@ class generalController {
 	//var printView = new PrintView($("#printView"),model);
 	//var MenuPrice = new MenuTable($("#MenuPrice"),model);
 	//var confirmHeader = new ConfirmHeader($("#confirmHeader"),guests);
-	
+
 	//var homeView = new HomeView($("#homeView"), model);
 	//var confirmdinnerView = new ConfirmdinnerView($("#confirmdinnerView"), model);
 	//var menuView = new MenuView($("#menuView"), model);
@@ -93,4 +99,3 @@ class generalController {
 
 
 
-  
