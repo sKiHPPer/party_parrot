@@ -9,6 +9,7 @@ class generalController {
 		this.headerView = new HeaderView($("#headerView"), model);
 		this.showHomeview();
 	}
+
 	showHomeview() {
 		//Visa homeView.js
 		this.hide();
