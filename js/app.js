@@ -7,7 +7,7 @@ class generalController {
 		this.container = document.getElementById("content");
 		console.log(document.getElementById("content"));
 		this.headerView = new HeaderView($("#headerView"), model);
-		this.showHomeview();
+		this.showMenuview();
 	}
 
 	showHomeview() {
@@ -23,6 +23,7 @@ class generalController {
 
 	showDishview() {
 		//Visa dishView.js
+		this.hide();
 		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
 		this.dishView = new DishView(this.container, this.dataModel);
 
@@ -32,7 +33,7 @@ class generalController {
 		//Visa menuView.js
 		this.hide();
 		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
-		this.dishView = new DishView(this.container, this.dataModel);
+		this.menuView = new MenuView(this.container, this.dataModel);
 
 	}
 
