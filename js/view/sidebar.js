@@ -30,10 +30,9 @@ var Sidebar = function (container, model) {
     html=html+"<p class='price'>SEK "+TotalPrice+"<p>";
     html=html+"<button id='button' class='btn'>Confirm Dinner</button>";
     //document.getElementById('sidebar').innerHTML=html;
-    var parent = document.getElementById('sidebar');
-    parent.appendChild(p);
+    container.appendChild(p);
     inp_guests.appendChild(input);
-    parent.appendChild(inp_guests);
+    container.appendChild(inp_guests);
 
     }
 	

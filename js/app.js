@@ -14,7 +14,7 @@ class generalController {
 		//Visa homeView.js
 		this.hide();
 		this.sidebarView = new Sidebar($("#sidebar"),this.dataModel);
-		this.dishView= new DishView(this.container, this.dataModel);
+		this.dishView= new HomeView(this.container, this.dataModel);
 		
 	}
 
