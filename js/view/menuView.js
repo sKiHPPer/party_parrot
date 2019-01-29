@@ -39,25 +39,21 @@ class MenuView {
         this.div.appendChild(this.h6);
 
         this.div.appendChild(this.input);
+        this.select.appendChild(this.all);
+        this.select.appendChild(this.MainCourse);
+        this.select.appendChild(this.SideDish);
+        this.select.appendChild(this.dessert);
+        this.select.appendChild(this.appetizer);
+        this.select.appendChild(this.starter);
         this.div.appendChild(this.select);
-        this.div.appendChild(this.all);
-        this.div.appendChild(this.MainCourse);
-        this.div.appendChild(this.SideDish);
-        this.div.appendChild(this.dessert);
-        this.div.appendChild(this.appetizer);
-        this.div.appendChild(this.starter);
-
-
-
-
-
-
-
-        var AllDishes = model.getAllDishes("starter");
-        var tha_dish = '';
-        var html = '';
-        var dish;
-
+        this.div.appendChild(this.button);
+        container.appendChild(this.div);
+            
+        
+            var AllDishes = model.getAllDishes("starter");
+            var tha_dish = '';
+            var html = '';
+            var dish;
 
 
         for (dish in AllDishes) {
@@ -68,5 +64,7 @@ class MenuView {
 
         container.innerHTML = html;
 
+            container.innerHTML += html;
+        
     }
 }
