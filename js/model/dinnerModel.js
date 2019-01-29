@@ -1,29 +1,30 @@
 //DinnerModel Object constructor
-var DinnerModel = function() {
+class DinnerModel{
 	//TODO Lab 1 implement the data structure that will hold number of guest
 	// and selected dishes for the dinner menu
 	
 	constructor(){
 		this.numberOfGuests=0;
 		this.dishes=dishesConst; // to be replaced in lab 3
+		this.dinner_menu=[];
 	}
 
-	let dinner_menu=[];
+	
 
 	setNumberOfGuests(num){
-		numberOfGuests=num;
+		this.numberOfGuests=num;
 		//KLAR
 	}
 	
 	getNumberOfGuests() {
-		return numberOfGuests;
+		return this.numberOfGuests;
 		//KLAR
 	}
 
 	//Returns the dish that is on the menu for selected type 
 	getSelectedDish(type) {
-		for(dish in dinner_menu){
-			let dish_id = dinner_menu[dish];
+		for(dish in this.dinner_menu){
+			let dish_id = this.dinner_menu[dish];
 			let dish_type=this.getDish(dish_id);
 			if(dish_type.type == typett) {
 				return dish_type.id;
@@ -36,8 +37,8 @@ var DinnerModel = function() {
 	//Returns all the dishes on the menu.
 	getFullMenu() {
 		let full_menu=[];
-		for(dish in dinner_menu){
-			let dis = this.getDish(dinner_menu[dish]);
+		for(dish in this.dinner_menu){
+			let dis = this.getDish(this.dinner_menu[dish]);
 			full_menu.push(dis);
 			}
 		return full_menu;
@@ -91,15 +92,15 @@ var DinnerModel = function() {
 		if(typeof old_dish !== 'undefined'){
 			this.removeDishFromMenu(old_dish);
 		}
-		dinner_menu.push(id);
+		this.dinner_menu.push(id);
 		//KLAR
 	}
 
 	//Removes dish from menu
 	removeDishFromMenu(id) {
-		for( var i = 0; i < dinner_menu.length; i++){
-			if ( dinner_menu[i] === ids) {
-			  dinner_menu.splice(i, 1);
+		for( var i = 0; i < this.dinner_menu.length; i++){
+			if ( this.dinner_menu[i] === ids) {
+			  this.dinner_menu.splice(i, 1);
 			}
 		 }		 
 		//KLAR
@@ -109,7 +110,7 @@ var DinnerModel = function() {
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
 	getAllDishes(type,filter) {
-	  return dishes.filter(function(dish) {
+	  return this.dishes.filter(function(dish) {
 		var found = true;
 		if(filter){
 			found = false;
@@ -390,4 +391,4 @@ var DinnerModel = function() {
 		}
 	];
 
-}
+

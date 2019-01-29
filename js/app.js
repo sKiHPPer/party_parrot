@@ -12,7 +12,7 @@ class generalController {
 	showHomeview(){
 		//Visa homeView.js
 		this.hide();
-		this.sidebarView = new Sidebar($("#sidebar"),model);
+		this.sidebarView = new Sidebar($("#sidebar"),this.dataModel);
 		this.dishView= new DishView(this.container, this.dataModel);
 		
 	}
