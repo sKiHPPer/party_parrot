@@ -13,7 +13,7 @@ class generalController {
 	showHomeview() {
 		//Visa homeView.js
 		this.hide();
-		this.homeView = new HomeView(this.container, this.dataModel);
+		this.homeController = new HomeController(this.container, this, this.dataModel);
 
 	}
 

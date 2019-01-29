@@ -21,7 +21,9 @@ class DinnerModel {
 		}
 	}
 
-	removeObserver(observer) {  /* remove observer from array */ }
+	removeObserver(observer) { 
+		/* remove observer from array */ 
+	}
 
 	setNumberOfGuests(num) {
 		this.numberOfGuests = num;
