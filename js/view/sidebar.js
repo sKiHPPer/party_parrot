@@ -18,7 +18,7 @@ var Sidebar = function (container, model) {
     input.max = "40";
     input.id = "number_guests";
     input.value = guests;
-    var html="<h6 class='big_menu'>My dinner </h6><p class='input_guests'>People</p><div class='input_guests'><input type='number' min='0' max='40' id='number_guests' value='"+guests+"'></div><div class='side_cost'><p class='side_something1'>Dish Name</p><p class='side_something2'>Cost</p></div>";
+    var html="<p class='input_guests'>People</p><div class='input_guests'><input type='number' min='0' max='40' id='number_guests' value='"+guests+"'></div><div class='side_cost'><p class='side_something1'>Dish Name</p><p class='side_something2'>Cost</p></div>";
    
     for(dish in WholeMenu){
         tha_dish=WholeMenu[dish];

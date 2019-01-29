@@ -22,7 +22,6 @@ class generalController {
 
 	showDishview() {
 		//Visa dishView.js
-		this.hide();
 		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
 		this.dishView = new DishView(this.container, this.dataModel);
 
