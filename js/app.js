@@ -7,13 +7,13 @@ class generalController {
 		this.container = document.getElementById("container");
 		//Här skapas alla views
 		this.headerView = new HeaderView(document.getElementById("header"), this.dataModel);
-		//this.dishView = new DishView(this.container, this.dataModel, 1);
+		this.dishView = new DishView(this.container, this.dataModel, 1);
 		this.homeView = new HomeView(this.container, this.dataModel);
 		this.menuView = new MenuView(this.container, this.dataModel)
 		this.sidebar = new Sidebar(document.getElementById("sidebar"), this.dataModel)
 		this.confirmdinner = new ConfirmdinnerView(this.container, this.dataModel)
 		//Pushar till lista och gör hidden
-		//this.view_list.push(this.dishView);
+		this.view_list.push(this.dishView);
 		this.view_list.push(this.homeView);
 		this.view_list.push(this.menuView);
 		this.view_list.push(this.sidebar);
@@ -46,12 +46,13 @@ class generalController {
 
 	}
 
-	showDishview(dishid) {
+	showDishview(dish) {
 		//Visa dishView.js
 		this.hide();
-		this.sidebar.div.style = "display:block;";
-		console.log(dishid);
-		//this.dishView.div.style = "display:block;";
+		//this.sidebar.div.style = "display:block;";
+		//this.dishView(this.container, this.dataModel, dishid);
+		this.dishView.showDish(dish);
+		this.dishView.div.style = "display:block;";
 
 	}
 

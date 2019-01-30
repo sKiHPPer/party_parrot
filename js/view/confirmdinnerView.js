@@ -15,6 +15,8 @@ class ConfirmdinnerView {
         this.menu = document.createElement("div");
         this.rubrik = document.createElement("p");
         this.rubrik.innerHTML = "My DINNER: " + this.guests + " PEOPLE";
+
+        //Tillbaka knapp.
         this.back_btn = document.createElement("button");
         this.back_btn.className = "button";
         this.back_btn.id = "btn";

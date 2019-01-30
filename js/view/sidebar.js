@@ -56,7 +56,7 @@ class Sidebar {
             this.button.appendChild(this.side_name);
             this.button.appendChild(this.price);
             this.div.appendChild(this.button);
-            this.menu_list.push([this.button, this.tha_dish.id]);
+            this.menu_list.push([this.button, this.tha_dish]);
         }
 
         this.SEKstring = document.createElement("p");
