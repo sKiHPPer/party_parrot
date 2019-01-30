@@ -45,7 +45,7 @@ class generalController {
 
 	showPrintview() {
 		//Visa printView.js
-		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
+		this.hide();
 
 	}
 
