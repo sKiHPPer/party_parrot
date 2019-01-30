@@ -3,7 +3,9 @@
 
 class MenuView {
     constructor(container, model) {
+        this.showList;
         this.button_list = [];
+        this.model = model;
         //div tag som allt i search baren ligger i.
         this.div = document.createElement("div");
         this.div.className = "search_bars menuTable";
@@ -22,15 +24,15 @@ class MenuView {
         this.all = document.createElement("option");
         this.all.innerHTML = "All";
         this.MainCourse = document.createElement("option");
-        this.MainCourse.innerHTML = "Main Course";
+        this.MainCourse.innerHTML = "main dish";
         this.SideDish = document.createElement("option");
         this.SideDish.innerHTML = "Side Dish";
         this.dessert = document.createElement("option");
-        this.dessert.innerHTML = "Dessert";
+        this.dessert.innerHTML = "dessert";
         this.appetizer = document.createElement("option");
         this.appetizer.innerHTML = "Appetizer";
         this.starter = document.createElement("option");
-        this.starter.innerHTML = "Starter";
+        this.starter.innerHTML = "starter";
         //Search knappen
         this.button = document.createElement("button");
         this.button.className = "three-bar";
@@ -80,5 +82,35 @@ class MenuView {
             this.div.appendChild(this.divimg);
             container.appendChild(this.div);
         
+    }
+
+    updateSearch(type, filter){
+        
+        this.button_list = [];
+        this.showList = this.model.getAllDishes(type,filter);
+
+        //clear the view 
+        while(this.divimg.firstChild){
+            this.divimg.removeChild(this.divimg.firstChild);
+        }
+
+        this.showList.forEach((element) => {
+            this.btn_image = document.createElement("button");
+            this.btn_image.className = "btn_image";
+            this.btn_image.id = "image";
+            this.img = document.createElement("img");
+            this.img.className = "small_img";
+            this.img.src = "images/"+element.image;
+            this.img.width = "114";
+            this.img.height = "114";
+            this.dish_name_menu = document.createElement("p");
+            this.dish_name_menu.className = "dish_name_menu";
+            this.dish_name_menu.innerHTML = element.name;
+            this.btn_image.appendChild(this.img);
+            this.btn_image.appendChild(this.dish_name_menu);
+            this.divimg.appendChild(this.btn_image);
+            this.button_list.push([this.btn_image, element]);
+        });
+
     }
 }
