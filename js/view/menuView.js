@@ -73,7 +73,7 @@ class MenuView {
             this.btn_image.appendChild(this.img);
             this.btn_image.appendChild(this.dish_name_menu);
             this.divimg.appendChild(this.btn_image);
-            this.button_list.push(this.btn_image);
+            this.button_list.push([this.btn_image, this.tha_dish.id]);
             //html = html + "<button id='image' class='btn_image'><img class='small_img' src='images/" + tha_dish.image + "' width='114' height='114'></img>" + "<p class='dish_name_menu'>" + tha_dish.name + "</p></button>";
         }
             //container.innerHTML += html;
