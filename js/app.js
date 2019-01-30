@@ -4,13 +4,13 @@ class generalController {
 	constructor(model) {
 		this.dataModel = model;
 		//skapa controllers som skapar views typ DishController()
-		this.container = document.getElementById("content");
+		this.container = document.getElementById("container");
 		this.headerView = new HeaderView($("#headerView"), model);
 		this.showHomeview();
 	}
 
 	hide() {
-		this.container.innerHTML = "";
+		this.container.innerHTML = "<div id='sidebar'>";
 	}
 
 	showHomeview() {
@@ -23,7 +23,7 @@ class generalController {
 	showMenuview() {
 		//Visa menuView.js
 		this.hide();
-		this.sidebarController = new SidebarController(this.container, this, this.dataModel);
+		this.sidebarController = new SidebarController(document.getElementById("sidebar"), this, this.dataModel);
 		this.menuController = new MenuController(this.container, this, this.dataModel);
 
 	}
@@ -31,7 +31,7 @@ class generalController {
 	showDishview() {
 		//Visa dishView.js
 		this.hide();
-		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
+		this.sidebarController = new SidebarController(document.getElementById("sidebar"), this, this.dataModel);
 		this.dishView = new DishView(this.container, this.dataModel);
 
 	}
