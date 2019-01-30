@@ -10,7 +10,7 @@ class generalController {
 	}
 
 	hide() {
-		this.container.innerHTML = "<div id='sidebar'>";
+		this.container.innerHTML = "<div id='sidebar'></div>";
 	}
 
 	showHomeview() {
