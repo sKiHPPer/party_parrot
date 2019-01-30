@@ -6,7 +6,7 @@ class DinnerModel {
 	constructor() {
 		this.numberOfGuests = 0;
 		this.dishes = dishesConst; // to be replaced in lab 3
-		this.dinner_menu = [];
+		this.dinner_menu = [1,2];
 		this.long_text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 		this._observers = [];
 	}
@@ -16,7 +16,7 @@ class DinnerModel {
 	}
 
 	notifyObservers(changeDetails) {
-		for (var i = 0; i < this._observers.length; i++) {
+		for (let i = 0; i < this._observers.length; i++) {
 			this._observers[i].update(this, changeDetails);
 		}
 	}
@@ -36,7 +36,7 @@ class DinnerModel {
 
 	//Returns the dish that is on the menu for selected type 
 	getSelectedDish(type) {
-		for (dish in this.dinner_menu) {
+		for (let dish in this.dinner_menu) {
 			let dish_id = this.dinner_menu[dish];
 			let dish_type = this.getDish(dish_id);
 			if (dish_type.type == typett) {
@@ -49,7 +49,7 @@ class DinnerModel {
 	//Returns all the dishes on the menu.
 	getFullMenu() {
 		let full_menu = [];
-		for (dish in this.dinner_menu) {
+		for (let dish in this.dinner_menu) {
 			let dis = this.getDish(this.dinner_menu[dish]);
 			full_menu.push(dis);
 		}
@@ -60,7 +60,7 @@ class DinnerModel {
 	getAllIngredients() {
 		let full_menu = this.getFullMenu();
 		let all_ingredients = [];
-		for (dish in full_menu) {
+		for (let dish in full_menu) {
 			all_ingredients.push(full_menu[dish].ingredients);
 		}
 		return all_ingredients;
@@ -71,7 +71,7 @@ class DinnerModel {
 		let total_price = 0;
 		let all_ingredients = this.getAllIngredients();
 		let i;
-		for (dish in all_ingredients) {
+		for (let dish in all_ingredients) {
 			for (i in all_ingredients[dish]) {
 				let ingredient = all_ingredients[dish][i];
 				total_price = total_price + (ingredient.price * this.numberOfGuests);
@@ -85,7 +85,7 @@ class DinnerModel {
 		let dish = this.getDish(id);
 		let i;
 
-		for (i in dish.ingredients) {
+		for (let i in dish.ingredients) {
 			let ingredient = dish.ingredients[i];
 			total_price = total_price + (ingredient.price * this.numberOfGuests);
 		}

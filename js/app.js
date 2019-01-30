@@ -38,9 +38,9 @@ class generalController {
 
 	showConfirmdinnerview() {
 		//Visa confirmdinner.js
-		this.hide();
-		
-
+		this.hide()
+		this.sidebarView = new Sidebar(this.container, this.dataModel);
+		this.confirmdinnerController.js = new ConfirmDinnerController(this.container, this, this.dataModel);
 	}
 
 	showPrintview() {

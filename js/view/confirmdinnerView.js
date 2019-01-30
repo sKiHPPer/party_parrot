@@ -1,14 +1,3 @@
-class confirmdinnerController {
-
-    constructor(view, model) {
-        //Skickar till printView
-        view.confirmbtn.addEventListener("click",);
-        //Skickar oss tillbaka till menuView
-        view.backbtn.addEventListener("click",);
-      }
-    
-}
-
 var ConfirmdinnerView = function (container, model) {    
     
         var fullMenu = model.getFullMenu();

@@ -4,6 +4,5 @@ class HomeController {
         this.generalController = generalController; //Skapar en väg till stora kontrollern
         this.view = new HomeView(container, model); //Kör HomeView och visar därmed Viewn
         this.view.button.addEventListener("click", () => this.generalController.showMenuview()); //Lägger till en eventlistner på knappen i viewn som skickar vidare till nästa view
-    
     }
 }
