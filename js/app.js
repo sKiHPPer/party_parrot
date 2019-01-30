@@ -24,8 +24,8 @@ class generalController {
 	showMenuview() {
 		//Visa menuView.js
 		this.hide();
-		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
-		this.menuView = new MenuView(this.container, this.dataModel);
+		this.sidebarController = new SidebarController(this.container, this, this.dataModel);
+		this.menuController = new MenuController(this.container, this, this.dataModel);
 
 	}
 
