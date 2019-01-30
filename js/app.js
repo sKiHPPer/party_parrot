@@ -5,7 +5,15 @@ class generalController {
 		this.dataModel = model;
 		//skapa controllers som skapar views typ DishController()
 		this.container = document.getElementById("container");
+		//Views
 		this.headerView = new HeaderView($("#headerView"), model);
+		//this.dishView = new DishView(this.container, this.dataModel);
+		this.homeView = new HomeView(this.container, model)
+		//controllers
+		this.homeController = new HomeController(this.container, this, this.dataModel, this.homeView);
+		this.sidebarController = new SidebarController(document.getElementById("sidebar"), this, this.dataModel);
+		this.menuController = new MenuController(this.container, this, this.dataModel);
+
 		this.showHomeview();
 	}
 
@@ -16,31 +24,31 @@ class generalController {
 	showHomeview() {
 		//Visa homeView.js
 		this.hide();
-		this.homeController = new HomeController(this.container, this, this.dataModel);
+		this.homeController;
 
 	}
 
 	showMenuview() {
 		//Visa menuView.js
 		this.hide();
-		this.sidebarController = new SidebarController(document.getElementById("sidebar"), this, this.dataModel);
-		this.menuController = new MenuController(this.container, this, this.dataModel);
+		this.sidebarController;
+		this.menuController;
 
 	}
 
 	showDishview() {
 		//Visa dishView.js
 		this.hide();
-		this.sidebarController = new SidebarController(document.getElementById("sidebar"), this, this.dataModel);
-		this.dishView = new DishView(this.container, this.dataModel);
+		this.sidebarController;
+		this.dishView;
 
 	}
 
 	showConfirmdinnerview() {
 		//Visa confirmdinner.js
 		this.hide()
-		this.sidebarView = new Sidebar(this.container, this.dataModel);
-		this.confirmdinnerController.js = new ConfirmDinnerController(this.container, this, this.dataModel);
+		this.sidebarView;
+		this.confirmdinnerController;
 	}
 
 	showPrintview() {

@@ -47,21 +47,37 @@ class MenuView {
         this.select.appendChild(this.starter);
         this.div.appendChild(this.select);
         this.div.appendChild(this.button);
-        container.appendChild(this.div);
             
         
-            var AllDishes = model.getAllDishes("starter");
-            var tha_dish = '';
-            var html = '';
-            var dish;
+        this.AllDishes = model.getAllDishes("starter");
+        this.tha_dish = '';
+        this.dish;
+        this.divimg = document.createElement("div");
 
-
-        for (dish in AllDishes) {
-            tha_dish = AllDishes[dish];
+        for (this.dish in this.AllDishes) {
+            this.tha_dish = this.AllDishes[this.dish];
             //alert("image: "+"<img src='"+images/tha_dish.image+"'></img>") 
-            html = html + "<button id='image' class='btn_image'><img class='small_img' src='images/" + tha_dish.image + "' width='114' height='114'></img>" + "<p class='dish_name_menu'>" + tha_dish.name + "</p></button>";
+            
+            this.btn_image = document.createElement("button");
+            this.btn_image.className = "btn_image";
+            this.btn_image.id = "image";
+            this.img = document.createElement("img");
+            this.img.className = "small_img";
+            this.img.src = "images/"+this.tha_dish.image;
+            this.img.width = "114";
+            this.img.height = "114";
+            this.dish_name_menu = document.createElement("p");
+            this.dish_name_menu.className = "dish_name_menu";
+            this.dish_name_menu.innerHTML = this.tha_dish.name;
+            this.btn_image.appendChild(this.img);
+            this.btn_image.appendChild(this.dish_name_menu);
+            this.divimg.appendChild(this.btn_image);
+            console.log(this.div);
+            //html = html + "<button id='image' class='btn_image'><img class='small_img' src='images/" + tha_dish.image + "' width='114' height='114'></img>" + "<p class='dish_name_menu'>" + tha_dish.name + "</p></button>";
         }
-            container.innerHTML += html;
+            //container.innerHTML += html;
+            this.div.appendChild(this.divimg);
+            container.appendChild(this.div);
         
     }
 }
