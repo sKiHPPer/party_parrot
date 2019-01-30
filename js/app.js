@@ -3,57 +3,69 @@ class generalController {
 
 	constructor(model) {
 		this.dataModel = model;
-		//skapa controllers som skapar views typ DishController()
+		this.view_list = [];
 		this.container = document.getElementById("container");
-		//Views
-		this.headerView = new HeaderView($("#headerView"), model);
+		//Här skapas alla views
+		this.headerView = new HeaderView($("#headerView"), this.dataModel);
 		//this.dishView = new DishView(this.container, this.dataModel);
-		this.homeView = new HomeView(this.container, model)
-		//controllers
-		this.homeController = new HomeController(this.container, this, this.dataModel, this.homeView);
-		this.sidebarController = new SidebarController(document.getElementById("sidebar"), this, this.dataModel);
-		this.menuController = new MenuController(this.container, this, this.dataModel);
+		this.homeView = new HomeView(this.container, this.dataModel);
+		this.menuView = new MenuView(this.container, this.dataModel)
+		this.sidebar = new Sidebar(document.getElementById("sidebar"), this.dataModel)
+		this.confirmdinner = new ConfirmdinnerView(this.container, this.dataModel)
+		//Pushar till lista och gör hidden
+		//this.view_list.push(this.dishView);
+		this.view_list.push(this.homeView);
+		this.view_list.push(this.menuView);
+		this.view_list.push(this.sidebar);
+		this.view_list.push(this.confirmdinner);
+		//Här skapas alla controllers
+		this.homeController = new HomeController(this, this.homeView);
+		this.sidebarController = new SidebarController(this, this.sidebar);
+		this.menuController = new MenuController(this, this.menuView);
 
 		this.showHomeview();
 	}
 
 	hide() {
-		this.container.innerHTML = "<div id='sidebar'></div>";
+		this.view_list.forEach((view) => { view.div.style = "display:none;" });
 	}
 
 	showHomeview() {
 		//Visa homeView.js
 		this.hide();
-		this.homeController;
+		this.homeView.div.style = "display:block;";
+
+
 
 	}
 
 	showMenuview() {
 		//Visa menuView.js
 		this.hide();
-		this.sidebarController;
-		this.menuController;
+		this.sidebar.div.style = "display:block;";
+		this.menuView.div.style = "display:block;";
+		
 
 	}
 
 	showDishview() {
 		//Visa dishView.js
 		this.hide();
-		this.sidebarController;
-		this.dishView;
+		this.sidebar.div.style = "display:block;";
+		this.dishView.div.style = "display:block;";
 
 	}
 
 	showConfirmdinnerview() {
 		//Visa confirmdinner.js
 		this.hide()
-		this.sidebarView;
-		this.confirmdinnerController;
+		this.confirmdinner.div.style = "display:block;";
 	}
 
 	showPrintview() {
 		//Visa printView.js
 		this.hide();
+		this.printView.div.style = "display:block;";
 	}
 }
 

@@ -3,3 +3,14 @@
     grid-template-columns: 0% 20% 80%;
     grid-template-rows: 55% 50%;
 }
+
+body {
+    display: block;
+  }
+  .start_box:focus ~ .alert {
+    display: none;
+  }
+  .sidebar:focus ~ .alert {
+    display: block;
+  }
+  .alert{display:none;}

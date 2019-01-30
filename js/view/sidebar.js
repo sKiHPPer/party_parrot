@@ -3,6 +3,8 @@ class Sidebar {
     constructor(container, model){
         model.addObserver(this);
 
+        this.div = document.createElement("div");
+
         this.WholeMenu = model.getFullMenu();
         this.TotalPrice = model.getTotalMenuPrice();
         this.tha_dish='';
@@ -28,13 +30,13 @@ class Sidebar {
         this.side_something2.className = "side_something2";
         this.side_something2.innerHTML = "Cost";
 
-        container.appendChild(this.p);
+        this.div.appendChild(this.p);
 
         this.inp_guests.appendChild(this.input);
-        container.appendChild(this.inp_guests);
+        this.div.appendChild(this.inp_guests);
         this.side_cost.appendChild(this.side_something1);
         this.side_cost.appendChild(this.side_something2);
-        container.appendChild(this.side_cost);
+        this.div. appendChild(this.side_cost);
 
         this.dish;
 
@@ -55,7 +57,7 @@ class Sidebar {
 
             this.button.appendChild(this.side_name);
             this.button.appendChild(this.price);
-            container.appendChild(this.button);
+            this.div.appendChild(this.button);
             //html=html+"<button class='sidebar_btn' id='btn'><p class='side_name'>"+tha_dish.name+"</p><p class='price'>"+dishPrice+"</p></button>";
         }
 
@@ -71,8 +73,9 @@ class Sidebar {
         this.confirm_btn.id = "button";
         this.confirm_btn.innerHTML = "Confirm Dinner";
 
-        container.appendChild(this.SEKstring);
-        container.appendChild(this.confirm_btn);
+        this.div.appendChild(this.SEKstring);
+        this.div.appendChild(this.confirm_btn);
+        container.appendChild(this.div);
         
 
     }

@@ -1,7 +1,7 @@
 class MenuController {
-    constructor(container, generalController, model) {
+    constructor(generalController, view) {
         this.generalController = generalController;
-        this.view = new MenuView(container, model);
-        this.view.button.addEventListener("click", () => this.generalController.showDishview());
+        //this.view = new MenuView(container, model);
+        view.button.addEventListener("click", () => this.generalController.showDishview());
     }
 }

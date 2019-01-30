@@ -1,8 +1,7 @@
 class SidebarController {
 
-    constructor(container, generalController, model) {
+    constructor(generalController, view) {
         this.generalController = generalController;
-        this.view = new Sidebar(container, model);
-        this.view.button.addEventListener("click", () => this.generalController.showConfirmdinnerview());
+        view.confirm_btn.addEventListener("click", () => this.generalController.showConfirmdinnerview());
     }
 }
