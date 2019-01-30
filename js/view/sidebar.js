@@ -72,7 +72,7 @@ class Sidebar {
         this.confirm_btn.innerHTML = "Confirm Dinner";
 
         container.appendChild(this.SEKstring);
-        container.appendChild(confirm_btn);
+        container.appendChild(this.confirm_btn);
         
 
     }
