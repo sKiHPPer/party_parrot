@@ -1,5 +1,5 @@
 class MenuController {
-    constructor{
+    constructor(){
         
     }
 }
