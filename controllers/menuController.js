@@ -4,7 +4,6 @@ class MenuController {
         //this.view = new MenuView(container, model);
         view.button.addEventListener("click", () => this.generalController.showDishview());
         view.button_list.forEach((dish) => {
-            console.log(dish);
             dish.addEventListener("click", () => this.generalController.showDishview());
         });
 

@@ -51,7 +51,12 @@ class Sidebar {
             this.price = document.createElement("p");
             this.price.className = "price";
             this.price.innerHTML = this.dishPrice;
+            this.dish_id = document.createElement("p");
+            //this.dish_id.type = "hidden";
+            this.dish_id.value = this.tha_dish.id;
+            console.log(this.dish_id.value);
 
+            this.button.appendChild(this.dish_id);
             this.button.appendChild(this.side_name);
             this.button.appendChild(this.price);
             this.div.appendChild(this.button);
