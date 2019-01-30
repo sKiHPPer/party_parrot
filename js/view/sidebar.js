@@ -70,6 +70,9 @@ class Sidebar {
         this.div.appendChild(this.SEKstring);
         this.div.appendChild(this.confirm_btn);
         container.appendChild(this.div);
+
+        //Vår input med guests:
+        console.log(this.input.value);
         
 
     }

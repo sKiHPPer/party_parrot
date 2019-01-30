@@ -11,7 +11,9 @@ class SidebarController {
         
         });
 
-        view.input.addEventListener("click", () => this.generalController.showConfirmdinnerview());
+        view.inp_guests.addEventListener("click", () => model.setNumberOfGuests(view.input));
+        console.log(view.input);
+        console.log(model.getNumberOfGuests());
                 
     }
 }
