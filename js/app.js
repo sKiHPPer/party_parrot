@@ -22,6 +22,7 @@ class generalController {
 		this.homeController = new HomeController(this, this.homeView);
 		this.sidebarController = new SidebarController(this, this.sidebar, this.dataModel);
 		this.menuController = new MenuController(this, this.menuView);
+		this.menuController = new HeaderController(this, this.HeaderView);
 
 		this.showHomeview();
 	}
