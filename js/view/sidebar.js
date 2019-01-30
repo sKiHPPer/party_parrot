@@ -3,6 +3,7 @@ class Sidebar {
     constructor(container, model){
         model.addObserver(this);
 
+        this.menu_list = [];
         this.div = document.createElement("div");
 
         this.WholeMenu = model.getFullMenu();
@@ -38,13 +39,9 @@ class Sidebar {
         this.side_cost.appendChild(this.side_something2);
         this.div. appendChild(this.side_cost);
 
-        this.dish;
-
-        //var html="<p class='input_guests'>People</p><div class='input_guests'><input type='number' min='0' max='40' id='number_guests' value='"+guests+"'></div><div class='side_cost'><p class='side_something1'>Dish Name</p><p class='side_something2'>Cost</p></div>";
-    
+        this.dish;    
         for(this.dish in this.WholeMenu){
             this.tha_dish=this.WholeMenu[this.dish];
-            console.log(this.tha_dish)
             this.dishPrice = model.getTotalDishPrice(this.tha_dish.id);
             this.button = document.createElement("button");
             this.button.className = "sidebar_btn";
@@ -58,13 +55,9 @@ class Sidebar {
             this.button.appendChild(this.side_name);
             this.button.appendChild(this.price);
             this.div.appendChild(this.button);
-            //html=html+"<button class='sidebar_btn' id='btn'><p class='side_name'>"+tha_dish.name+"</p><p class='price'>"+dishPrice+"</p></button>";
+            this.menu_list.push(this.button);
         }
 
-        //html=html+"<p class='price'>SEK "+TotalPrice+"<p>";
-        //html=html+"<button id='button' class='btn'>Confirm Dinner</button>";
-        //document.getElementById('sidebar').innerHTML=html;
-        //var parent = document.getElementById('sidebar');
         this.SEKstring = document.createElement("p");
         this.SEKstring.className = "price";
         this.SEKstring.innerHTML = "SEK "+this.TotalPrice;
