@@ -54,9 +54,7 @@ class generalController {
 	showPrintview() {
 		//Visa printView.js
 		this.hide();
-
 	}
-
 }
 
 window.onload = function () {
