@@ -5,9 +5,8 @@ class generalController {
 		this.dataModel = model;
 		//skapa controllers som skapar views typ DishController()
 		this.container = document.getElementById("content");
-		console.log(document.getElementById("content"));
 		this.headerView = new HeaderView($("#headerView"), model);
-		this.showMenuview();
+		this.showHomeview();
 	}
 
 	hide() {
