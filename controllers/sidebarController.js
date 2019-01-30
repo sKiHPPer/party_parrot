@@ -7,6 +7,11 @@ class SidebarController {
             console.log(dish[0]);
             dish[0].addEventListener("click", () => {
                 this.generalController.showDishview(dish[1])});
+        
+        
         });
+
+        view.input.addEventListener("click", () => this.generalController.showConfirmdinnerview());
+                
     }
 }

@@ -1,8 +1,7 @@
 
-var DishView = function (container, model) {
+var DishView = function (container, model, dish_id) {
 
     var long_text = model.long_text;
-    dish_id = "1"
     var dish = model.getDish(dish_id);
     var dishPrice = model.getTotalDishPrice(dish_id);
     var guests = model.getNumberOfGuests();
