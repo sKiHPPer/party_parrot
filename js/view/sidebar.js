@@ -41,7 +41,7 @@ class Sidebar {
         //var html="<p class='input_guests'>People</p><div class='input_guests'><input type='number' min='0' max='40' id='number_guests' value='"+guests+"'></div><div class='side_cost'><p class='side_something1'>Dish Name</p><p class='side_something2'>Cost</p></div>";
     
         for(this.dish in this.WholeMenu){
-            this.tha_dish=this.WholeMenu[dish];
+            this.tha_dish=this.WholeMenu[this.dish];
             console.log(this.tha_dish)
             this.dishPrice = model.getTotalDishPrice(this.tha_dish.id);
             this.button = document.createElement("button");
