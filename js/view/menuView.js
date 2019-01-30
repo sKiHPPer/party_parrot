@@ -61,9 +61,6 @@ class MenuView {
             //alert("image: "+"<img src='"+images/tha_dish.image+"'></img>") 
             html = html + "<button id='image' class='btn_image'><img class='small_img' src='images/" + tha_dish.image + "' width='114' height='114'></img>" + "<p class='dish_name_menu'>" + tha_dish.name + "</p></button>";
         }
-
-        container.innerHTML = html;
-
             container.innerHTML += html;
         
     }

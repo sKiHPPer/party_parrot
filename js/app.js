@@ -6,7 +6,7 @@ class generalController {
 		//skapa controllers som skapar views typ DishController()
 		this.container = document.getElementById("content");
 		this.headerView = new HeaderView($("#headerView"), model);
-		this.showHomeview();
+		this.showMenuview();
 	}
 
 	hide() {
@@ -23,7 +23,7 @@ class generalController {
 	showMenuview() {
 		//Visa menuView.js
 		this.hide();
-		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
+		this.sidebarView = new Sidebar(this.container, this.dataModel);
 		this.menuView = new MenuView(this.container, this.dataModel);
 
 	}
