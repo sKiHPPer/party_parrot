@@ -63,7 +63,16 @@ class Sidebar {
         //html=html+"<button id='button' class='btn'>Confirm Dinner</button>";
         //document.getElementById('sidebar').innerHTML=html;
         //var parent = document.getElementById('sidebar');
-        
+        this.SEKstring = document.createElement("p");
+        this.SEKstring.className = "price";
+        this.SEKstring.innerHTML = "SEK "+this.TotalPrice;
+        this.confirm_btn = document.createElement("button");
+        this.confirm_btn.className = "btn";
+        this.confirm_btn.id = "button";
+        this.confirm_btn.innerHTML = "Confirm Dinner";
+
+        container.appendChild(this.SEKstring);
+        container.appendChild(confirm_btn);
         
 
     }
