@@ -13,6 +13,7 @@ class Sidebar {
         this.p.className = "input_guests";
         this.p.innerHTML = "People";
         this.guestInput = document.createElement("div");
+        
         //The "menu":
         this.inp_guests = document.createElement("div");
         this.inp_guests.className = "input_guests";

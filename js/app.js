@@ -34,9 +34,6 @@ class generalController {
 		//Visa homeView.js
 		this.hide();
 		this.homeView.div.style = "display:block;";
-
-
-
 	}
 
 	showMenuview() {
