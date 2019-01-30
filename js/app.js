@@ -6,7 +6,7 @@ class generalController {
 		this.view_list = [];
 		this.container = document.getElementById("container");
 		//Här skapas alla views
-		this.headerView = new HeaderView($("#headerView"), this.dataModel);
+		this.headerView = new HeaderView(document.getElementById("header"), this.dataModel);
 		//this.dishView = new DishView(this.container, this.dataModel, 1);
 		this.homeView = new HomeView(this.container, this.dataModel);
 		this.menuView = new MenuView(this.container, this.dataModel)
