@@ -17,7 +17,6 @@ class generalController {
 		//Visa homeView.js
 		this.hide();
 		this.homeController = new HomeController(this.container, this, this.dataModel);
-
 	}
 
 	showMenuview() {
@@ -25,7 +24,6 @@ class generalController {
 		this.hide();
 		this.sidebarController = new SidebarController(this.container, this, this.dataModel);
 		this.menuController = new MenuController(this.container, this, this.dataModel);
-
 	}
 
 	showDishview() {
@@ -33,7 +31,6 @@ class generalController {
 		this.hide();
 		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
 		this.dishView = new DishView(this.container, this.dataModel);
-
 	}
 
 	showConfirmdinnerview() {
@@ -46,9 +43,7 @@ class generalController {
 	showPrintview() {
 		//Visa printView.js
 		this.hide();
-
 	}
-
 }
 
 window.onload = function () {
