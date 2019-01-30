@@ -38,14 +38,14 @@ class generalController {
 
 	showConfirmdinnerview() {
 		//Visa confirmdinner.js
-		this.hide()
-		this.sidebarView = new Sidebar(this.container, this.dataModel);
+		this.hide();
+		
 
 	}
 
 	showPrintview() {
 		//Visa printView.js
-		this.sidebarView = new Sidebar($("#sidebar"), this.dataModel);
+		this.hide();
 
 	}
 
