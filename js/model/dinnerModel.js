@@ -45,7 +45,7 @@ class DinnerModel {
 		for (let dish in this.dinner_menu) {
 			let dish_id = this.dinner_menu[dish];
 			let dish_type = this.getDish(dish_id);
-			if (dish_type.type == typett) {
+			if (dish_type.type == type) {
 				return dish_type.id;
 			}
 		}
@@ -115,7 +115,7 @@ class DinnerModel {
 	//Removes dish from menu
 	removeDishFromMenu(id) {
 		for (let i = 0; i < this.dinner_menu.length; i++) {
-			if (this.dinner_menu[i] === ids) {
+			if (this.dinner_menu[i] === id) {
 				this.dinner_menu.splice(i, 1);
 			}
 		}

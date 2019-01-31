@@ -102,6 +102,8 @@ class DishView {
         //Total price for dish.
         this.total_dish_price = document.createElement("p");
         this.total_dish_price.className = "price";
+        console.log("Här är priset på rätten!")
+        console.log(this.dishPrice);
         this.total_dish_price.innerHTML = "SEK "+this.dishPrice;
         this.box_ingredients.appendChild(this.total_dish_price);
 
@@ -131,6 +133,8 @@ class DishView {
 
 
     }
+
+
 
 }
 

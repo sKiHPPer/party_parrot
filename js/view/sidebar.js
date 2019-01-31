@@ -40,7 +40,10 @@ class Sidebar {
         this.side_cost.appendChild(this.side_something2);
         this.div. appendChild(this.side_cost);
 
-        this.dish;    
+        this.dish; 
+        //Lägger till alla knappar med rätter i menyn i en egen div   
+        this.dishes_in_menu = document.createElement("div");
+        this.dishes_in_menu.className = "dishes_in_menu";
         for(this.dish in this.WholeMenu){
             this.tha_dish=this.WholeMenu[this.dish];
             this.dishPrice = model.getTotalDishPrice(this.tha_dish.id);
@@ -55,7 +58,7 @@ class Sidebar {
 
             this.button.appendChild(this.side_name);
             this.button.appendChild(this.price);
-            this.div.appendChild(this.button);
+            this.dishes_in_menu.appendChild(this.button);
             this.menu_list.push([this.button, this.tha_dish]);
         }
 
@@ -67,6 +70,7 @@ class Sidebar {
         this.confirm_btn.id = "button";
         this.confirm_btn.innerHTML = "Confirm Dinner";
 
+        this.div.appendChild(this.dishes_in_menu); //Lägger till diven med alla rätter i menyn till den stora diven.
         this.div.appendChild(this.SEKstring);
         this.div.appendChild(this.confirm_btn);
         container.appendChild(this.div);
@@ -80,11 +84,16 @@ class Sidebar {
     update(model){
         // redraw just the portion affected by the changeDetails
         // or remove all graphics in the view, read the whole model and redraw 
+
+        //clear the view 
+        while(this.dishes_in_menu.firstChild){
+            this.dishes_in_menu.removeChild(this.dishes_in_menu.firstChild);
+        }
+
         this.menu_list = [];
         this.WholeMenu = model.getFullMenu();
         this.TotalPrice = model.getTotalMenuPrice();
-        this.tha_dish='';
-        //The "menu":
+        this.tha_dish;
        
         this.input.value = model.getNumberOfGuests();
 
@@ -103,21 +112,11 @@ class Sidebar {
 
             this.button.appendChild(this.side_name);
             this.button.appendChild(this.price);
-            this.div.appendChild(this.button);
+            this.dishes_in_menu.appendChild(this.button);
             this.menu_list.push([this.button, this.tha_dish]);
         }
 
-        this.SEKstring = document.createElement("p");
-        this.SEKstring.className = "price";
         this.SEKstring.innerHTML = "SEK "+this.TotalPrice;
-        this.confirm_btn = document.createElement("button");
-        this.confirm_btn.className = "btn";
-        this.confirm_btn.id = "button";
-        this.confirm_btn.innerHTML = "Confirm Dinner";
-
-        this.div.appendChild(this.SEKstring);
-        this.div.appendChild(this.confirm_btn);
-        container.appendChild(this.div);
        } 
 
 }
