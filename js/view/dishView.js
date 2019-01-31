@@ -2,7 +2,6 @@ class DishView {
     constructor (container, model, dish_id) {
         this.long_text = model.long_text;
         this.dish = model.getDish(dish_id);
-        console.log(this.dish);
         this.dishPrice = model.getTotalDishPrice(dish_id);
         this.guests = model.getNumberOfGuests();
 

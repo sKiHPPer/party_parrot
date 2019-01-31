@@ -6,7 +6,6 @@ class ConfirmdinnerView {
         this.fullMenu = model.getFullMenu();
         this.totalPrice = model.getTotalMenuPrice();
         this.guests = model.getNumberOfGuests();
-        console.log(this.fullMenu);
         this.tha_dish = '';
 
         //Stora diven som allt i viewn ligger i.
