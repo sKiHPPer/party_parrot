@@ -24,11 +24,16 @@ class DinnerModel {
 
 	removeObserver(observer) { 
 		/* remove observer from array */ 
+		for (let i = 0; i < this._observers.length; i++) {
+			if (this._observers[i] === observer) {
+				this._observers.splice(i, 1);
+			}
+		}
 	}
 
 	setNumberOfGuests(num) {
 		this.numberOfGuests = num;
-		this.notifyObservers();
+		this.notifyObservers(this);
 	}
 
 	getNumberOfGuests() {
@@ -104,6 +109,7 @@ class DinnerModel {
 			this.removeDishFromMenu(old_dish);
 		}
 		this.dinner_menu.push(id);
+		this.notifyObservers(this);
 	}
 
 	//Removes dish from menu
@@ -113,6 +119,7 @@ class DinnerModel {
 				this.dinner_menu.splice(i, 1);
 			}
 		}
+		this.notifyObservers(this);
 	}
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")

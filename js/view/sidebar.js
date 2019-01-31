@@ -77,9 +77,47 @@ class Sidebar {
 
     }
 
-    update(model, changeDetails){
+    update(model){
         // redraw just the portion affected by the changeDetails
         // or remove all graphics in the view, read the whole model and redraw 
+        this.menu_list = [];
+        this.WholeMenu = model.getFullMenu();
+        this.TotalPrice = model.getTotalMenuPrice();
+        this.tha_dish='';
+        //The "menu":
+       
+        this.input.value = model.getNumberOfGuests();
+
+        this.dish;    
+        for(this.dish in this.WholeMenu){
+            this.tha_dish=this.WholeMenu[this.dish];
+            this.dishPrice = model.getTotalDishPrice(this.tha_dish.id);
+            this.button = document.createElement("button");
+            this.button.className = "sidebar_btn";
+            this.side_name = document.createElement("p");
+            this.side_name.className = "side_name";
+            this.side_name.innerHTML = this.tha_dish.name;
+            this.price = document.createElement("p");
+            this.price.className = "price";
+            this.price.innerHTML = this.dishPrice;
+
+            this.button.appendChild(this.side_name);
+            this.button.appendChild(this.price);
+            this.div.appendChild(this.button);
+            this.menu_list.push([this.button, this.tha_dish]);
+        }
+
+        this.SEKstring = document.createElement("p");
+        this.SEKstring.className = "price";
+        this.SEKstring.innerHTML = "SEK "+this.TotalPrice;
+        this.confirm_btn = document.createElement("button");
+        this.confirm_btn.className = "btn";
+        this.confirm_btn.id = "button";
+        this.confirm_btn.innerHTML = "Confirm Dinner";
+
+        this.div.appendChild(this.SEKstring);
+        this.div.appendChild(this.confirm_btn);
+        container.appendChild(this.div);
        } 
 
 }

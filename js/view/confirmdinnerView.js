@@ -1,6 +1,7 @@
 class ConfirmdinnerView {
 
     constructor(container, model) {
+        model.addObserver(this);
         //Allt som hämtas från modellen.
         this.fullMenu = model.getFullMenu();
         this.totalPrice = model.getTotalMenuPrice();
@@ -74,6 +75,51 @@ class ConfirmdinnerView {
         //Stora diven appendas till containern.
         container.appendChild(this.div);
     }
+
+    update(model){
+        // redraw just the portion affected by the changeDetails
+        // or remove all graphics in the view, read the whole model and redraw 
+        //Uppdaterar rubriken
+        this.rubrik.innerHTML = "My DINNER: " + model.getNumberOfGuests() + " PEOPLE";
+        
+        this.button_list = [];
+        this.the_menu = model.getFullMenu();
+
+        //clear the view 
+        while(this.divimg.firstChild){
+            this.divimg.removeChild(this.divimg.firstChild);
+        }
+
+        //Uppdaterar menyn.
+        this.the_menu.forEach((dish) => {
+            this.dishPrice = model.getTotalDishPrice(dish.id);
+            //HTML koden där bilden och namnet på rätten visas.
+            this.btn_image = document.createElement("button");
+            this.btn_image.className = "btn_image";
+            this.btn_image.id = "image";
+            this.img = document.createElement("img");
+            this.img.className = "small_img";
+            this.img.src = "images/" + dish.image;
+            this.img.width = "114";
+            this.img.height = "114";
+            this.dish_name_menu = document.createElement("p");
+            this.dish_name_menu.className = "dish_name_menu";
+            this.dish_name_menu.innerHTML = dish.name;
+            this.btn_image.appendChild(this.img);
+            this.btn_image.appendChild(this.dish_name_menu);
+            this.divimg.appendChild(this.btn_image);
+
+            //HTML koden för priset på rätten.
+            this.dish_price = document.createElement("p");
+            this.dish_price.className = "price";
+            this.dish_price.innerHTML = this.dishPrice + " SEK";
+            this.divimg.appendChild(this.dish_price);
+        });
+
+        //Uppdaterar total priset på menyn.
+        this.total_price.innerHTML = "Total: " + model.getTotalMenuPrice(); + " SEK";
+
+       } 
 }
 
 
