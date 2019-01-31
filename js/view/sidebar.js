@@ -19,7 +19,7 @@ class Sidebar {
         this.inp_guests.className = "input_guests";
         this.input = document.createElement("input");
         this.input.type = "number";
-        this.input.min = "0";
+        this.input.min = "1";
         this.input.max = "40";
         this.input.id = "number_guests";
         this.input.value = model.getNumberOfGuests();

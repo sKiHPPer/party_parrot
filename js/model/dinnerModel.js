@@ -127,13 +127,11 @@ class DinnerModel {
 	//if you don't pass any filter all the dishes will be returned
 	getAllDishes(type, filter) {
 		let filtered = this.dishes.filter((dish) => {
-			console.log(dish.name);
 			let found = true;
 			if (filter) {
 				found = false;
 				
 				dish.ingredients.forEach(function (ingredient) {
-					console.log(found)
 					if (ingredient.name.indexOf(filter) != -1) {	
 						found = true;
 					}
@@ -146,7 +144,6 @@ class DinnerModel {
 			
 			return (dish.type == type && found);
 		});
-		console.log(filtered);
 		return filtered
 	}
 
