@@ -115,6 +115,7 @@ class DishView {
     }
 
     showDish(dish){
+        this.dish = dish;
         this.name.innerHTML = dish.name;
         this.image.src = "images/"+dish.image;
         this.prep.innerHTML = dish.description;

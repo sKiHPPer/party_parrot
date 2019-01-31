@@ -47,6 +47,7 @@ class generalController {
 	showDishview(dish) {
 		//Visa dishView.js
 		this.hide();
+		this.sidebar.div.style = "display:block;";
 		this.dishView.showDish(dish);
 		this.dishView.div.style = "display:block;";
 

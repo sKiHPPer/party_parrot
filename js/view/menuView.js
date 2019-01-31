@@ -52,7 +52,7 @@ class MenuView {
         this.div.appendChild(this.button);
             
         
-        this.AllDishes = model.getAllDishes("starter");
+        this.AllDishes = model.getAllDishes();
         this.tha_dish = '';
         this.dish;
         this.divimg = document.createElement("div");

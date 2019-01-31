@@ -5,6 +5,7 @@ class DishController{
             console.log("Id:t på vår dish")
             console.log(view.dish.id);
             model.addDishToMenu(view.dish.id);
+            this.generalController.showMenuview()
         
         });
     }
