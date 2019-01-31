@@ -23,7 +23,7 @@ class generalController {
 		this.sidebarController = new SidebarController(this, this.sidebar, this.dataModel);
 		this.menuController = new MenuController(this, this.menuView);
 		this.headerController = new HeaderController(this, this.headerView);
-
+		this.dishController = new DishController(this, this.dishView, this.dataModel);
 		this.showHomeview();
 	}
 
@@ -42,8 +42,6 @@ class generalController {
 		this.hide();
 		this.sidebar.div.style = "display:block;";
 		this.menuView.div.style = "display:block;";
-		
-
 	}
 
 	showDishview(dish) {

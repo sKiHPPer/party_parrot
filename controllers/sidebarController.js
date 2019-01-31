@@ -11,9 +11,9 @@ class SidebarController {
         
         });
 
-        view.inp_guests.addEventListener("click", () => model.setNumberOfGuests(view.input));
-        console.log(view.input);
-        console.log(model.getNumberOfGuests());
-                
+        view.inp_guests.addEventListener("click", () => {
+            //console.log("FUNKAR");
+            //console.log(document.getElementById("number_guests").value);
+            model.setNumberOfGuests(document.getElementById("number_guests").value)});
     }
 }
