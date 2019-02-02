@@ -22,6 +22,8 @@ class ConfirmdinnerView {
         this.back_btn.id = "btn";
         this.back_btn.innerHTML = "Go back and edit dinner";
 
+        //Här läggs rubriken och tillbaka knappen först in i sin egna div class och sedan läggs den classen
+        //in i den stora diven som allt ligger i.
         this.menu.appendChild(this.rubrik);
         this.menu.appendChild(this.back_btn);
         this.div.appendChild(this.menu);
