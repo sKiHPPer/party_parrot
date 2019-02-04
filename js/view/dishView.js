@@ -1,5 +1,7 @@
 class DishView {
     constructor (container, model, dish_id) {
+        model.addObserver(this);
+
         this.long_text = model.long_text;
         this.dish = model.getDish(dish_id);
         this.dishPrice = model.getTotalDishPrice(dish_id);
@@ -119,7 +121,7 @@ class DishView {
         this.name.innerHTML = dish.name;
         this.image.src = "images/"+dish.image;
         this.prep.innerHTML = dish.description;
-
+        
         dish.ingredients.forEach((ingredient) => {
             this.quantity.innerHTML = (this.guests*ingredient.quantity)+" "+ingredient.unit;
             this.ingr_name.innerHTML = ingredient.name;
@@ -128,9 +130,6 @@ class DishView {
 
 
         this.total_dish_price.innerHTML = "SEK " + dish.price;
-
-
-
 
     }
 
