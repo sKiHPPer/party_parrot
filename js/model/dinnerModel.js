@@ -51,7 +51,6 @@ class DinnerModel {
 		}
 	}
 
-
 	//Returns all the dishes on the menu.
 	getFullMenu() {
 		let full_menu = [];
@@ -157,7 +156,6 @@ class DinnerModel {
 		return undefined;
 	}
 }
-
 
 // the dishes letiable contains an array of all the 
 // dishes in the database. each dish has id, name, type,

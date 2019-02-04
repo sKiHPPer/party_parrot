@@ -1,7 +1,12 @@
 class ConfirmDinnerController {
-    constructor(container, generalController, model){
+    constructor(generalController, view){
         this.generalController = generalController;
-        this.view = new ConfirmdinnerView(container, model);
-        this.view.button.addEventListener("click", () => this.generalController.showPrintview());
+        //this.view = new ConfirmdinnerView(container, model);
+        view.confirm_btn.addEventListener("click", () => {
+            console.log("funkar!")
+            this.generalController.showPrintview()});
+        view.back_btn.addEventListener("click", () => {
+            console.log("funkar!")
+            this.generalController.showMenuview()});
     }
 }
