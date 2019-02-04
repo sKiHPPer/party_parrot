@@ -44,16 +44,21 @@ class PrintView {
             //Här lägger jag in alla taggar ovan i de taggar jag vill att de ska ligga innanför
             this.name_and_latintext.appendChild(this.dish_name_printview);//Här lägger jag in rättens namn som ligger innanför en <h4> tag, innanför <div> tagen som ska innehålla namnet samt latinsk text
             this.name_and_latintext.appendChild(this.latin_text);//Här lägger jag in den latinska texten innanför samma som ovan
+            this.dish_row.appendChild(this.name_and_latintext);//lägger in i raden för rätten
             this.prep_and_latintext.appendChild(this.preparation);//Lägger in rubrik PREPARATION, 
+            this.prep_and_latintext.appendChild(this.latin_text);//lägger in latinska texten under preparation rubrken
+            this.dish_row.appendChild(this.prep_and_latintext);//Lägger in preparation grejen i raden
+            this.div.appendChild(this.dish_row);//Lägger in hela rätten i den stora diven
         });
-        for (dish in fullMenu) {
+        /*for (dish in fullMenu) {
             tha_dish = fullMenu[dish];
             //alert("image: "+"<img src='"+images/tha_dish.image+"'></img>") 
             html = html + "<div class='row'><img class='col-md-4' src='images/" + tha_dish.image + "'></img>" + "<div class='col-md-4'><h4 class='dish_name_menu'>" + tha_dish.name + "</h4>" + long_text + "</div><div class='col-md-4'><h4>PREPARATION</h4>" + long_text + long_text + "</div></div>";
         }
+        */
+        container.appendChild(this.div);
+        //container.innerHTML = html;
 
-
-        container.innerHTML = html;
     }
 
 }
