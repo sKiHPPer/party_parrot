@@ -11,15 +11,15 @@ class PrintView {
         this.rubrik.innerHTML = "My DINNER: " + this.guests + " PEOPLE";//Här lägger jag in det som ska ligga innanför <p> tagen
 
         //Tillbaka knapp.
-        this.back_btn = document.createElement("button");//Här skapar jag en <button> tag som ska innehålla tillbaka knappen
-        this.back_btn.className = "button";//Här skapar jag ett class namn
-        this.back_btn.id = "btn";//Här ger jag knappen ett id
-        this.back_btn.innerHTML = "Go back and edit dinner";//Här lägger jag in det som ska stå i knappen
+        this.back_btn1 = document.createElement("button");//Här skapar jag en <button> tag som ska innehålla tillbaka knappen
+        this.back_btn1.className = "button";//Här skapar jag ett class namn
+        this.back_btn1.id = "btn";//Här ger jag knappen ett id
+        this.back_btn1.innerHTML = "Go back and edit dinner";//Här lägger jag in det som ska stå i knappen
 
         //Här läggs rubriken och tillbaka knappen först in i sin egna div class och sedan läggs den classen
         //in i den stora diven som allt ligger i.
         this.menu.appendChild(this.rubrik);//Här lägger jag in rubrik texten (<p> tagen) innanför <div> tagen på rad 9. dvs tagen som ska innehålla allt som har med menyn att göra
-        this.menu.appendChild(this.back_btn);//Här lägger jag till knappen innaför samma <div> tag som jag gjorde med texten ovan
+        this.menu.appendChild(this.back_btn1);//Här lägger jag till knappen innaför samma <div> tag som jag gjorde med texten ovan
         this.div.appendChild(this.menu);//Här lägger jag till <div> tagen som nu innehåller menyn/rubriken och tillbaka knappen i den stora <div> tagen som ska innehålla all html som skapas i denna fil
 
         //Menyn

@@ -8,6 +8,9 @@ class DishController{
             this.generalController.showMenuview()
         
         });
+        view.back_btn.addEventListener("click", () => {
+            console.log("funkar!")
+            generalController.showMenuview()});
     }
 
 }
