@@ -136,7 +136,9 @@ class DishView {
         this.total_dish_price.innerHTML = "SEK " + this.dishPrice;
     }
 
-
+    update(model){
+        
+    }
 
 }
 
