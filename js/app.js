@@ -26,7 +26,7 @@ class generalController {
 		this.menuController = new MenuController(this, this.menuView);
 		this.headerController = new HeaderController(this, this.headerView);
 		this.dishController = new DishController(this, this.dishView, this.dataModel);
-		this.printController = new printController(this, this.dishView, this.printView);
+		this.printController = new PrintController(this, this.dishView, this.printView);
 		this.showHomeview();
 	}
 
