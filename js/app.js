@@ -12,7 +12,7 @@ class generalController {
 		this.menuView = new MenuView(this.container, this.dataModel)
 		this.sidebar = new Sidebar(document.getElementById("sidebar"), this.dataModel);
 		this.confirmdinner = new ConfirmdinnerView(this.container, this.dataModel);
-		this.printView = new PrintView(this.container, this.dataModel);
+		//this.printView = new PrintView(this.container, this.dataModel);
 
 		//Pushar till lista och gör hidden
 		this.view_list.push(this.dishView);
@@ -20,13 +20,14 @@ class generalController {
 		this.view_list.push(this.menuView);
 		this.view_list.push(this.sidebar);
 		this.view_list.push(this.confirmdinner);
+		//this.view_list.push(this.printView);
 		//Här skapas alla controllers
 		this.homeController = new HomeController(this, this.homeView);
 		this.sidebarController = new SidebarController(this, this.sidebar, this.dataModel);
 		this.menuController = new MenuController(this, this.menuView);
 		this.headerController = new HeaderController(this, this.headerView);
 		this.dishController = new DishController(this, this.dishView, this.dataModel);
-		this.printController = new PrintController(this, this.dishView, this.printView);
+		//this.printController = new PrintController(this, this.dishView, this.printView);
 		this.showHomeview();
 	}
 
