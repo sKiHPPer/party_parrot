@@ -1,6 +1,6 @@
 class DishView {
     constructor (container, model, dish_id) {
-        //model.addObserver(this);
+        model.addObserver(this);
         this.model = model;
         this.long_text = model.long_text;
         this.dish = model.getDish(dish_id);
@@ -116,11 +116,50 @@ class DishView {
 
     }
 
+    update(model){
+        this.guests= model.getNumberOfGuests();
+        this.model = model;
+        console.log(this.dish);
+
+        this.showDish(this.dish);
+    }
+
     showDish(dish){
         this.dish = dish;
         this.name.innerHTML = this.dish.name;
 
-        
+        while(this.table_ingredients.firstChild){
+            this.table_ingredients.removeChild(this.table_ingredients.firstChild);
+        }
+
+
+        this.dish.ingredients.forEach((ingredient) => {
+            //tha_ingredient = dish.ingredients[ingredient];
+            //The row with all the columns.
+            this.dish_row = document.createElement("tr");
+
+            //Cells with data.
+            this.quantity = document.createElement("td");
+            this.quantity.innerHTML = (this.guests*ingredient.quantity)+" "+ingredient.unit;
+            this.dish_row.appendChild(this.quantity);
+
+            this.ingr_name = document.createElement("td");
+            this.ingr_name.innerHTML = ingredient.name;
+            this.dish_row.appendChild(this.ingr_name);
+
+            this.SEK = document.createElement("td");
+            this.SEK.innerHTML = "SEK";
+            this.dish_row.appendChild(this.SEK);
+
+            this.ingr_price = document.createElement("td");
+            this.ingr_price.innerHTML = this.guests * ingredient.price;
+            this.dish_row.appendChild(this.ingr_price);
+
+            //Appending the row with the ingredient to the big table.
+            this.table_ingredients.appendChild(this.dish_row);
+
+        });
+
         this.image.src = "images/"+this.dish.image;
  
 
@@ -133,13 +172,10 @@ class DishView {
             this.ingr_price.innerHTML = this.guests * ingredient.price;
             });
 
-            console.log(dish);
-        this.total_dish_price.innerHTML = "SEK " + this.dishPrice;
+        this.total_dish_price.innerHTML = "SEK " + (this.dishPrice*this.guests);
     }
 
-    update(model){
-        
-    }
+
 
 }
 

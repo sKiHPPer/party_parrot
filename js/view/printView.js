@@ -27,7 +27,6 @@ class PrintView {
         //html = html + "<div class='col-md-4'><button class='button' id='btn'>Go back and edit dinner</button></div></div><div class='row'>";
         //Alla rätter i menyn
         this.fullMenu.forEach((dish) => {
-            console.log("hej");
             this.dish_row = document.createElement("div");//Diven som allt som ingår i vad som ska visas för en rätt ligger i
             this.dish_row.className = "print_dish";//class-namnet på diven som skapades ovan
             this.dish_image = document.createElement("img");//Här skapas en <img> tag som bilden ska ligga i
