@@ -1,7 +1,7 @@
 class DishView {
     constructor (container, model, dish_id) {
-        //model.addObserver(this);
-        this.model = model;
+        model.addObserver(this);
+
         this.long_text = model.long_text;
         this.dish = model.getDish(dish_id);
         this.dishPrice = model.getTotalDishPrice(dish_id);
