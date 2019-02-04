@@ -1,7 +1,10 @@
 class PrintController {
-    constructor(container, generalController, model){
-        this.generalController = generalController;
-        this.view = new ConfirmdinnerView(container, model);
-        this.view.button.addEventListener("click", () => this.generalController.ConfirmdinnerView());
+    constructor(generalController, view) {
+        //this.generalController = generalController;
+        //this.view = new ConfirmdinnerView(container, model);
+        view.back_btn.addEventListener("click", () => {
+            console.log("printview funkar!")
+            generalController.showConfirmdinnerview()
+        });
     }
 }
