@@ -118,18 +118,18 @@ class DishView {
 
     showDish(dish){
         this.dish = dish;
-        this.name.innerHTML = dish.name;
-        this.image.src = "images/"+dish.image;
-        this.prep.innerHTML = dish.description;
-        
-        dish.ingredients.forEach((ingredient) => {
+        this.name.innerHTML = this.dish.name;
+        this.image.src = "images/"+this.dish.image;
+        this.prep.innerHTML = this.dish.description;
+
+        this.dish.ingredients.forEach((ingredient) => {
             this.quantity.innerHTML = (this.guests*ingredient.quantity)+" "+ingredient.unit;
             this.ingr_name.innerHTML = ingredient.name;
             this.ingr_price.innerHTML = this.guests * ingredient.price;
             });
 
 
-        this.total_dish_price.innerHTML = "SEK " + dish.price;
+        this.total_dish_price.innerHTML = "SEK " + this.dish.price;
 
     }
 
