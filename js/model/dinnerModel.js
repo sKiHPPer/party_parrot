@@ -130,8 +130,9 @@ class DinnerModel {
             headers:{   
                 'X-Mashape-Key': API_KEY
             }
-      }).then(response => response.json())
-		.then(data => data.dishes)
+	  }).then(response => response.json())
+	  	.then(data => data.results);
+		//.then(console.log)
 } 
 
 		/*let filtered = this.dishes.filter((dish) => {
