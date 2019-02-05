@@ -98,6 +98,7 @@ class MenuView {
         
         this.button_list = [];
         this.showList = this.model.getAllDishes(type,filter);
+        console.log(this.showList);
 
         //clear the view 
         while(this.divimg.firstChild){
