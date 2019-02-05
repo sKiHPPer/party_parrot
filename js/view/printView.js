@@ -1,5 +1,6 @@
 class PrintView {
     constructor(container, model) {
+        model.addObserver(this);
         this.fullMenu = model.getFullMenu();//Här hämtar jag menyn från modelen
         this.guests = model.getNumberOfGuests();//Här hämtar jag antalet gäster från the model
         //Stora diven som allt i viewn ligger i.
@@ -60,5 +61,33 @@ class PrintView {
         //container.innerHTML = html;
 
     }
-
+    update(model){
+        this.fullMenu = model.getFullMenu();//Här hämtar jag menyn från modelen
+        this.guests = model.getNumberOfGuests();//Här hämtar jag antalet gäster från the model
+        this.rubrik.innerHTML = "My DINNER: " + this.guests + " PEOPLE";//Här lägger jag in det som ska ligga innanför <p> tagen
+        this.fullMenu.forEach((dish) => {
+            this.dish_row = document.createElement("div");//Diven som allt som ingår i vad som ska visas för en rätt ligger i
+            this.dish_row.className = "print_dish";//class-namnet på diven som skapades ovan
+            this.dish_image = document.createElement("img");//Här skapas en <img> tag som bilden ska ligga i
+            this.dish_image.className = "dish_image";//Här lägger jag till ett class-namn för <img> tagen
+            this.dish_image.src = "images/"+dish.image;//Här lägger jag till själva "bilden" i <img> tagen
+            this.name_and_latintext = document.createElement("div");//Här skapar jag en <div> tag som ska innehålla rättens namn samt info text som i detta fall bara blir latinsk text
+            this.dish_name_printview = document.createElement("h4");//Här skapas en <h4> tag som namnet på rätten ska ligga i
+            this.dish_name_printview.innerHTML = dish.name;//Här lägger jag in rättens namn innanför <h4> tagen
+            this.latin_text = document.createElement("p");//Här skapar jag en <p> tag som den latinska texten ska ligga i
+            this.latin_text.innerHTML = model.long_text;//Här lägger jag in den latinska texten innanför <p>tagen
+            this.prep_and_latintext = document.createElement("div");//Här skapar jag en ny <div> tag som PREPARATION rubriken ska ligga i samt latinsk text igen för vi är lata
+            this.preparation = document.createElement("h4");//Här skapar jag en <h4> tag som PREAPARATION rubriken ska ligga i
+            this.preparation.innerHTML = "PREPARATION";//Här lägger jag in PREPARATION innanför <h4>tagen
+            
+            //Här lägger jag in alla taggar ovan i de taggar jag vill att de ska ligga innanför
+            this.name_and_latintext.appendChild(this.dish_name_printview);//Här lägger jag in rättens namn som ligger innanför en <h4> tag, innanför <div> tagen som ska innehålla namnet samt latinsk text
+            this.name_and_latintext.appendChild(this.latin_text);//Här lägger jag in den latinska texten innanför samma som ovan
+            this.dish_row.appendChild(this.name_and_latintext);//lägger in i raden för rätten
+            this.prep_and_latintext.appendChild(this.preparation);//Lägger in rubrik PREPARATION, 
+            this.prep_and_latintext.appendChild(this.latin_text);//lägger in latinska texten under preparation rubrken
+            this.dish_row.appendChild(this.prep_and_latintext);//Lägger in preparation grejen i raden
+            this.div.appendChild(this.dish_row);//Lägger in hela rätten i den stora diven
+        });
+    }
 }
