@@ -125,7 +125,16 @@ class DinnerModel {
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
 	getAllDishes(type, filter) {
-		let filtered = this.dishes.filter((dish) => {
+
+		return fetch(SOME_API_URL,{ 
+            headers:{   
+                'X-Mashape-Key': API_KEY
+            }
+      }).then(response => response.json())
+        .then(data => data.dishes)
+} 
+
+		/*let filtered = this.dishes.filter((dish) => {
 			let found = true;
 			if (filter) {
 				found = false;
@@ -143,7 +152,8 @@ class DinnerModel {
 			
 			return (dish.type == type && found);
 		});
-		return filtered
+
+		return filtered*/
 	}
 
 	//function that returns a dish of specific ID

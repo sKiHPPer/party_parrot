@@ -22,17 +22,23 @@ class MenuView {
         this.select.className = "three_bar";
         this.select.id = "sel1";
         this.all = document.createElement("option");
-        this.all.innerHTML = "All";
+        //this.all.innerHTML = "All";
         this.MainCourse = document.createElement("option");
-        this.MainCourse.innerHTML = "main dish";
+        this.MainCourse.innerHTML = "main course";
         this.SideDish = document.createElement("option");
-        this.SideDish.innerHTML = "Side Dish";
+        this.SideDish.innerHTML = "side dish";
         this.dessert = document.createElement("option");
         this.dessert.innerHTML = "dessert";
         this.appetizer = document.createElement("option");
-        this.appetizer.innerHTML = "Appetizer";
-        this.starter = document.createElement("option");
-        this.starter.innerHTML = "starter";
+        this.appetizer.innerHTML = "appetizer";
+        this.salad = document.createElement("option");
+        this.salad.innerHTML = "salad";
+        this.bread = document.createElement("option");
+        this.bread.innerHTML = "bread";
+        this.breakfast = document.createElement("option");
+        this.breakfast.innerHTML = "breakfast";
+        this.soup = document.createElement("option");
+        this.soup.innerHTML = "soup";
         //Search knappen
         this.button = document.createElement("button");
         this.button.className = "three-bar";
@@ -42,14 +48,18 @@ class MenuView {
         this.div.appendChild(this.h6);
 
         this.div.appendChild(this.input);
-        this.select.appendChild(this.all);
+        //this.select.appendChild(this.all);
         this.select.appendChild(this.MainCourse);
         this.select.appendChild(this.SideDish);
         this.select.appendChild(this.dessert);
         this.select.appendChild(this.appetizer);
-        this.select.appendChild(this.starter);
+        this.select.appendChild(this.salad);
+        this.select.appendChild(this.bread);
+        this.select.appendChild(this.breakfast);
+        this.select.appendChild(this.soup);
         this.div.appendChild(this.select);
         this.div.appendChild(this.button);
+        
             
         
         this.AllDishes = model.getAllDishes();
