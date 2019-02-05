@@ -97,22 +97,21 @@ class MenuView {
     updateSearch(type, filter) {
 
         this.button_list = [];
-        this.model.getAllDishes(type, filter).then(dishes => {
-            this.showList = dishes;
-            console.log("Räääätt")
-            console.log(dishes)
+        this.model.getAllDishes(type, filter).then(result => {
+            this.showList = result.results; //skickar med hela result istället för bara bit av det
+            console.log(this.showList)
             this.showList.forEach((element) => {
                 this.btn_image = document.createElement("button");
                 this.btn_image.className = "btn_image";
                 this.btn_image.id = "image";
                 this.img = document.createElement("img");
                 this.img.className = "small_img";
-                this.img.src = "images/"+element.image;
+                this.img.src = result.baseUri + element.image; //skickar baseUri innan bildnamnet
                 this.img.width = "114";
                 this.img.height = "114";
                 this.dish_name_menu = document.createElement("p");
                 this.dish_name_menu.className = "dish_name_menu";
-                this.dish_name_menu.innerHTML = element.name;
+                this.dish_name_menu.innerHTML = element.title;
                 this.btn_image.appendChild(this.img);
                 this.btn_image.appendChild(this.dish_name_menu);
                 this.divimg.appendChild(this.btn_image);

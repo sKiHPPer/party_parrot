@@ -131,8 +131,7 @@ class DinnerModel {
                 'X-Mashape-Key': API_KEY
             }
 	  }).then(response => response.json())
-	  	.then(data => data.results);
-		//.then(console.log)
+	  	.then(data => data);
 } 
 
 		/*let filtered = this.dishes.filter((dish) => {
