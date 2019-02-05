@@ -10,6 +10,7 @@ class DinnerModel {
 		this.long_text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 		this._observers = [];
 		this.dinner_id = 0;
+		//this.API_KEY = API.API_KEY;
 	}
 
 	addObserver(observer) {
@@ -125,13 +126,12 @@ class DinnerModel {
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
 	getAllDishes(type, filter) {
-
-		return fetch(SOME_API_URL,{ 
+		return fetch(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type=${type}`,{
             headers:{   
-                'X-Mashape-Key': API_KEY
+                'X-Mashape-Key': '3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767'
             }
       }).then(response => response.json())
-        .then(data => data.dishes)
+		.then(data => data.dishes)
 } 
 
 		/*let filtered = this.dishes.filter((dish) => {
@@ -154,7 +154,7 @@ class DinnerModel {
 		});
 
 		return filtered*/
-	}
+	
 
 	//function that returns a dish of specific ID
 	getDish(id) {
