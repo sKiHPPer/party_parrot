@@ -105,7 +105,7 @@ class MenuView {
             this.divimg.removeChild(this.divimg.firstChild);
         }
 
-        this.showList.forEach((element) => {
+        /*this.showList.forEach((element) => {
             this.btn_image = document.createElement("button");
             this.btn_image.className = "btn_image";
             this.btn_image.id = "image";
@@ -122,6 +122,6 @@ class MenuView {
             this.divimg.appendChild(this.btn_image);
             this.button_list.push([this.btn_image, element]);
         });
-
+*/
     }
 }
