@@ -1,5 +1,5 @@
 class SmallDishView {
-    constructor(dish,URL, container) {
+    constructor(dish, URL, container) {
 
         this.dish = dish
         this.btn_image = document.createElement("button");
