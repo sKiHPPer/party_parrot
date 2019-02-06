@@ -105,7 +105,7 @@ class ConfirmdinnerView {
             this.img.height = "114";
             this.dish_name_menu = document.createElement("p");
             this.dish_name_menu.className = "dish_name_menu";
-            this.dish_name_menu.innerHTML = dish.name;
+            this.dish_name_menu.innerHTML = dish.title;
             this.btn_image.appendChild(this.img);
             this.btn_image.appendChild(this.dish_name_menu);
             this.divimg.appendChild(this.btn_image);
