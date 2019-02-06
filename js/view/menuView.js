@@ -96,6 +96,7 @@ class MenuView {
             // registrera vad view ska göra när API kallet går igenom
             .then(result => { //unpacking
                 this.showList = result.results; //skickar med hela result istället för bara bit av det
+                console.log(this.showList)
                 this.divimg.innerHTML='';
                 this.showList.forEach((element) => {
                     this.btn_image = document.createElement("button");
@@ -115,8 +116,6 @@ class MenuView {
                     this.button_list.push([this.btn_image, element]);
                     
                 });
-                
-                
             });
     }
 }
