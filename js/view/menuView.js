@@ -97,6 +97,9 @@ class MenuView {
     updateSearch(type, filter) {
 
         this.button_list = [];
+        this.loading = document.createElement("h1")
+        this.loading.innerHTML = `Loading...`;
+        this.divimg.appendChild(this.loading);
         this.model.getAllDishes(type, filter).then(result => {
             this.showList = result.results; //skickar med hela result istället för bara bit av det
             console.log(this.showList)
