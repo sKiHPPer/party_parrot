@@ -23,8 +23,8 @@ class DinnerModel {
 		}
 	}
 
-	removeObserver(observer) { 
-		/* remove observer from array */ 
+	removeObserver(observer) {
+		/* remove observer from array */
 		for (let i = 0; i < this._observers.length; i++) {
 			if (this._observers[i] === observer) {
 				this._observers.splice(i, 1);
@@ -126,35 +126,44 @@ class DinnerModel {
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
 	getAllDishes(type, filter) {
-		return fetch(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type=${type}`,{
-            headers:{   
-                'X-Mashape-Key': API_KEY
-            }
-	  }).then(response => response.json())
-	  	.then(data => data);
-} 
+		//fetch returnerar en promise
+		return fetch(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type=${type}&number=100`, { //kan ta bort 100
+			headers: {
+				'X-Mashape-Key': API_KEY
+			}
+		})
+			.then(response => {//kollar att vi inte fått error när vi försökte fetcha
+				if (response.ok) {
+					return response;
+				}
+				throw Error(response.statusText);
+			})
+			.then(response => response.json())
+			.catch(console.error); //fångar upp ifall vi fick error
+			//.then(data => data);
+	}
 
-		/*let filtered = this.dishes.filter((dish) => {
-			let found = true;
-			if (filter) {
-				found = false;
-				
-				dish.ingredients.forEach(function (ingredient) {
-					if (ingredient.name.indexOf(filter) != -1) {	
-						found = true;
-					}
-				});
+	/*let filtered = this.dishes.filter((dish) => {
+		let found = true;
+		if (filter) {
+			found = false;
 			
-				if (dish.name.indexOf(filter) != -1) {
+			dish.ingredients.forEach(function (ingredient) {
+				if (ingredient.name.indexOf(filter) != -1) {	
 					found = true;
 				}
+			});
+		
+			if (dish.name.indexOf(filter) != -1) {
+				found = true;
 			}
-			
-			return (dish.type == type && found);
-		});
+		}
+		
+		return (dish.type == type && found);
+	});
 
-		return filtered*/
-	
+	return filtered*/
+
 
 	//function that returns a dish of specific ID
 	getDish(id) {

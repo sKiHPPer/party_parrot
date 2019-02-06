@@ -76,12 +76,12 @@ class MenuView {
             this.btn_image.id = "image";
             this.img = document.createElement("img");
             this.img.className = "small_img";
-            this.img.src = "images/" + this.tha_dish.image;
+            this.img.src = "images/" + this.tha_dish.image; //fixa
             this.img.width = "114";
             this.img.height = "114";
             this.dish_name_menu = document.createElement("p");
             this.dish_name_menu.className = "dish_name_menu";
-            this.dish_name_menu.innerHTML = this.tha_dish.name;
+            this.dish_name_menu.innerHTML = this.tha_dish.title; //fixa
             this.btn_image.appendChild(this.img);
             this.btn_image.appendChild(this.dish_name_menu);
             this.divimg.appendChild(this.btn_image);
@@ -97,44 +97,46 @@ class MenuView {
     updateSearch(type, filter) {
 
         this.button_list = [];
-        this.loading = document.createElement("h1")
-        this.loading.innerHTML = `Loading...`;
-        this.divimg.appendChild(this.loading);
-        this.model.getAllDishes(type, filter).then(result => {
-            this.showList = result.results; //skickar med hela result istället för bara bit av det
-            console.log(this.showList)
-            this.showList.forEach((element) => {
-                this.btn_image = document.createElement("button");
-                this.btn_image.className = "btn_image";
-                this.btn_image.id = "image";
-                this.img = document.createElement("img");
-                this.img.className = "small_img";
-                this.img.src = result.baseUri + element.image; //skickar baseUri innan bildnamnet
-                this.img.width = "114";
-                this.img.height = "114";
-                this.dish_name_menu = document.createElement("p");
-                this.dish_name_menu.className = "dish_name_menu";
-                this.dish_name_menu.innerHTML = element.title;
-                this.btn_image.appendChild(this.img);
-                this.btn_image.appendChild(this.dish_name_menu);
-                this.divimg.appendChild(this.btn_image);
-                this.button_list.push([this.btn_image, element]);
+        
+        // Börja med att begära API kall från modellen
+        console.log("before promise");
+        this.model.getAllDishes(type, filter)
+            // registrera vad view ska göra när API kallet går igenom
+            .then(result => { //unpacking
+                this.showList = result.results; //skickar med hela result istället för bara bit av det
+                this.showList.forEach((element) => {
+                    this.btn_image = document.createElement("button");
+                    this.btn_image.className = "btn_image";
+                    this.btn_image.id = "image";
+                    this.img = document.createElement("img");
+                    this.img.className = "small_img";
+                    this.img.src = result.baseUri + element.image; //skickar baseUri innan bildnamnet
+                    this.img.width = "114";
+                    this.img.height = "114";
+                    this.dish_name_menu = document.createElement("p");
+                    this.dish_name_menu.className = "dish_name_menu";
+                    this.dish_name_menu.innerHTML = element.title;
+                    this.btn_image.appendChild(this.img);
+                    this.btn_image.appendChild(this.dish_name_menu);
+                    this.divimg.appendChild(this.btn_image);
+                    this.button_list.push([this.btn_image, element]);
+                });
             });
-
-
-            /* do something with new dishes */
-        }).catch(error => {
-            console.log(error + "Feeeeeel!")
-            /* do something with the error */
-        });
+        // Medan vi väntar på API kall så kan vi skriva ut en placeholder.
+        console.log("promise recieved");
+        let loadingPlaceholder = document.createElement("p");
+        loadingPlaceholder.innerHTML = "loading...";
+        this.div.appendChild(loadingPlaceholder); // borde inte vara this.div utan inuti this.divimg 
+        console.log(loadingPlaceholder);
+        console.log("placeholder set");
 
         console.log(this.showList)
-        //clear the view 
+        //clear the view
         while (this.divimg.firstChild) {
             this.divimg.removeChild(this.divimg.firstChild);
         }
 
-        
+
 
     }
 }
