@@ -127,7 +127,9 @@ class DinnerModel {
 	//if you don't pass any filter all the dishes will be returned
 	getAllDishes(type, filter) {
 		//fetch returnerar en promise
-		return fetch(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type=${type}&number=20`, { //kan ta bort 100
+		this.error = 'Error: Could not get dishes from data...'
+		//document.getElementById("container").innerHTML = this.error
+		return fetch(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type=${type}&number=20&query=${filter}`, { //kan ta bort 100
 			headers: {
 				'X-Mashape-Key': API_KEY
 			}
