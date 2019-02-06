@@ -127,20 +127,19 @@ class DinnerModel {
 	//if you don't pass any filter all the dishes will be returned
 	getAllDishes(type, filter) {
 		//fetch returnerar en promise
-		return fetch(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type=${type}&number=100`, {
+		return fetch(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type=${type}&number=20`, { //kan ta bort 100
 			headers: {
 				'X-Mashape-Key': API_KEY
 			}
 		})
-			.then(response => {//kollar att vi intezzz
+			.then(response => {//kollar att vi inte fått error när vi försökte fetcha
 				if (response.ok) {
 					return response;
 				}
 				throw Error(response.statusText);
 			})
 			.then(response => response.json())
-			.catch(console.error); //unpacka på ett annat ställe?
-			//.then(data => data);
+			.catch(console.error); //fångar upp ifall vi fick error
 	}
 
 	/*let filtered = this.dishes.filter((dish) => {
