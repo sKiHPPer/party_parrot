@@ -67,6 +67,7 @@ class MenuView {
         this.dish;
         this.divimg = document.createElement("div");
         
+        //Här kör vi funktionen som skapar alla rätter
         this.createDishes('all', '')
 
         //container.innerHTML += html;
@@ -85,7 +86,6 @@ class MenuView {
     }
 
     createDishes(type, filter){
-        
 
         this.button_list = [];
         this.divimg.innerHTML='Loading...';
