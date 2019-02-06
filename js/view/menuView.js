@@ -22,7 +22,7 @@ class MenuView {
         this.select.className = "three_bar";
         this.select.id = "sel1";
         this.all = document.createElement("option");
-        //this.all.innerHTML = "All";
+        this.all.innerHTML = "all";
         this.MainCourse = document.createElement("option");
         this.MainCourse.innerHTML = "main course";
         this.SideDish = document.createElement("option");
@@ -48,7 +48,7 @@ class MenuView {
         this.div.appendChild(this.h6);
 
         this.div.appendChild(this.input);
-        //this.select.appendChild(this.all);
+        this.select.appendChild(this.all);
         this.select.appendChild(this.MainCourse);
         this.select.appendChild(this.SideDish);
         this.select.appendChild(this.dessert);
@@ -62,32 +62,13 @@ class MenuView {
 
 
 
-        this.AllDishes = model.getAllDishes();
+        //this.AllDishes = model.getAllDishes();
         this.tha_dish = '';
         this.dish;
         this.divimg = document.createElement("div");
+        
+        this.createDishes('all', '')
 
-        for (this.dish in this.AllDishes) {
-            this.tha_dish = this.AllDishes[this.dish];
-            //alert("image: "+"<img src='"+images/tha_dish.image+"'></img>") 
-
-            this.btn_image = document.createElement("button");
-            this.btn_image.className = "btn_image";
-            this.btn_image.id = "image";
-            this.img = document.createElement("img");
-            this.img.className = "small_img";
-            this.img.src = "images/" + this.tha_dish.image; //fixa
-            this.img.width = "114";
-            this.img.height = "114";
-            this.dish_name_menu = document.createElement("p");
-            this.dish_name_menu.className = "dish_name_menu";
-            this.dish_name_menu.innerHTML = this.tha_dish.title; //fixa
-            this.btn_image.appendChild(this.img);
-            this.btn_image.appendChild(this.dish_name_menu);
-            this.divimg.appendChild(this.btn_image);
-            this.button_list.push([this.btn_image, this.tha_dish]);
-            //html = html + "<button id='image' class='btn_image'><img class='small_img' src='images/" + tha_dish.image + "' width='114' height='114'></img>" + "<p class='dish_name_menu'>" + tha_dish.name + "</p></button>";
-        }
         //container.innerHTML += html;
         this.div.appendChild(this.divimg);
         container.appendChild(this.div);
@@ -95,6 +76,18 @@ class MenuView {
     }
 
     updateSearch(type, filter) {
+
+        //clear the view
+        while (this.divimg.firstChild) {
+            this.divimg.removeChild(this.divimg.firstChild);
+        }
+        this.createDishes(type,filter);
+    }
+
+    createDishes(type, filter){
+        while (this.divimg.firstChild) {
+            this.divimg.removeChild(this.divimg.firstChild);
+        }
 
         this.button_list = [];
         
@@ -124,19 +117,10 @@ class MenuView {
             });
         // Medan vi väntar på API kall så kan vi skriva ut en placeholder.
         console.log("promise recieved");
-        let loadingPlaceholder = document.createElement("p");
-        loadingPlaceholder.innerHTML = "loading...";
-        this.div.appendChild(loadingPlaceholder); // borde inte vara this.div utan inuti this.divimg 
+        
         console.log(loadingPlaceholder);
         console.log("placeholder set");
 
         console.log(this.showList)
-        //clear the view
-        while (this.divimg.firstChild) {
-            this.divimg.removeChild(this.divimg.firstChild);
-        }
-
-
-
     }
 }
