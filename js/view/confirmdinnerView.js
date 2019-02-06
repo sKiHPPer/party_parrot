@@ -93,14 +93,14 @@ class ConfirmdinnerView {
 
         //Uppdaterar menyn.
         this.the_menu.forEach((dish) => {
-            this.dishPrice = model.getTotalDishPrice(dish.id);
+            this.dishPrice = model.getTotalDishPrice(dish);
             //HTML koden där bilden och namnet på rätten visas.
             this.btn_image = document.createElement("button");
             this.btn_image.className = "btn_image";
             this.btn_image.id = "image";
             this.img = document.createElement("img");
             this.img.className = "small_img";
-            this.img.src = "images/" + dish.image;
+            this.img.src = dish.image;
             this.img.width = "114";
             this.img.height = "114";
             this.dish_name_menu = document.createElement("p");

@@ -89,7 +89,6 @@ class Sidebar {
 
         this.menu_list = [];
         this.WholeMenu = model.getFullMenu();
-        console.log(this.WholeMenu);
         this.TotalPrice = model.getTotalMenuPrice();
         this.tha_dish;
        
@@ -98,12 +97,12 @@ class Sidebar {
         this.dish;    
         for(this.dish in this.WholeMenu){
             this.tha_dish=this.WholeMenu[this.dish];
-            this.dishPrice = model.getTotalDishPrice(this.tha_dish.id);
+            this.dishPrice = model.getTotalDishPrice(this.tha_dish);
             this.button = document.createElement("button");
             this.button.className = "sidebar_btn";
             this.side_name = document.createElement("p");
             this.side_name.className = "side_name";
-            this.side_name.innerHTML = this.tha_dish.name;
+            this.side_name.innerHTML = this.tha_dish.title;
             this.price = document.createElement("p");
             this.price.className = "price";
             this.price.innerHTML = this.dishPrice;

@@ -11,6 +11,9 @@ class DishView {
         //loading sign
         this.Loading = document.createElement("div");
         this.div.appendChild(this.Loading);
+
+        this.the_content = document.createElement("div");
+
         //Ruta med dish name, bild och latinsk text.
         this.description = document.createElement("div");
         this.name = document.createElement("h4");
@@ -21,29 +24,17 @@ class DishView {
         this.latin = document.createElement("p");
         this.latin.innerHTML = this.long_text;
 
-        this.description.appendChild(this.name);
-        this.description.appendChild(this.image);
-        this.description.appendChild(this.latin);
-
         //Tillbaka knapp.
         this.back_btn = document.createElement("button");
         this.back_btn.className = "button";
         this.back_btn.id = "btn";
         this.back_btn.innerHTML = "Back to search";
-
-        this.description.appendChild(this.back_btn);
-
+         
         //Preparations avsnittet.
         this.head_prep = document.createElement("h4");
         this.head_prep.innerHTML = "PREPARATION";
         this.prep = document.createElement("p");
         
-        this.description.appendChild(this.head_prep);
-        this.description.appendChild(this.prep);
-
-        //Appendar description diven till stora diven.
-        this.div.appendChild(this.description);
-
         //Rutan med ingredienser osv.
         this.box_ingredients = document.createElement("div");
         this.amount_for_guests = document.createElement("p");
@@ -51,24 +42,31 @@ class DishView {
         //The big table with the ingredients.
         this.table_ingredients = document.createElement("table");
        
-        //lägger till the table med alla ingredienser till box_ingredients.
-        this.box_ingredients.appendChild(this.table_ingredients);
-
         //Add to menu button.
         this.add_to_menu = document.createElement("button");
         this.add_to_menu.className = "button";
         this.add_to_menu.id = "btn";
         this.add_to_menu.innerHTML = "Add to menu"
-        this.box_ingredients.appendChild(this.add_to_menu);
-
-
+    
         //Total price for dish.
         this.total_dish_price = document.createElement("p");
         this.total_dish_price.className = "price";
-        this.box_ingredients.appendChild(this.total_dish_price);
 
+        this.description.appendChild(this.name);
+        this.description.appendChild(this.image);
+        this.description.appendChild(this.latin);
+        this.description.appendChild(this.back_btn);
+        this.description.appendChild(this.head_prep);
+        this.description.appendChild(this.prep);
+        //Appendar description diven till stora diven.
+        this.the_content.appendChild(this.description);
+        //lägger till the table med alla ingredienser till box_ingredients.
+        this.box_ingredients.appendChild(this.table_ingredients);
+        this.box_ingredients.appendChild(this.add_to_menu);
+        this.box_ingredients.appendChild(this.total_dish_price);
         //Lägg till boxen med ingredienser till stora diven samt appenda stora diven.
-        this.div.appendChild(this.box_ingredients);
+        this.the_content.appendChild(this.box_ingredients);
+        this.div.appendChild(this.the_content)
         container.appendChild(this.div);
         //container.innerHTML = html;
     
@@ -86,12 +84,13 @@ class DishView {
         while(this.table_ingredients.firstChild){
             this.table_ingredients.removeChild(this.table_ingredients.firstChild);
         }
-
+        this.the_content.style = "display:none;"
         this.Loading.innerHTML = 'Loading...';
         // Börja med att begära API kall från modellen
         this.model.getDish(id)
             // registrera vad view ska göra när API kallet går igenom
             .then(dish => { //unpacking
+                this.the_content.style = "display:block;"
                 this.dish = dish;
                 this.Loading.innerHTML = '';
                 this.dish.extendedIngredients.forEach((ingredient) => {
@@ -133,7 +132,7 @@ class DishView {
                     this.ingr_price.innerHTML = this.guests;
                     });
         
-                this.total_dish_price.innerHTML = "SEK " + (this.dishPrice*this.guests);
+                this.total_dish_price.innerHTML = "SEK " + this.dishPrice;
                 //this.dish=dish;
                 
                    
