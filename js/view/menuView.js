@@ -66,7 +66,7 @@ class MenuView {
         this.tha_dish = '';
         this.dish;
         this.divimg = document.createElement("div");
-        
+
         //Här kör vi funktionen som skapar alla rätter
         this.createDishes('all', '')
 
@@ -82,21 +82,20 @@ class MenuView {
         while (this.divimg.firstChild) {
             this.divimg.removeChild(this.divimg.firstChild);
         }
-        this.createDishes(type,filter);
+        this.createDishes(type, filter);
     }
 
-    createDishes(type, filter){
+    createDishes(type, filter) {
 
         this.button_list = [];
-        this.divimg.innerHTML='Loading...';
-        
+        this.divimg.innerHTML = 'Loading...';
+
         // Börja med att begära API kall från modellen
-        console.log("before promise");
         this.model.getAllDishes(type, filter)
             // registrera vad view ska göra när API kallet går igenom
             .then(result => { //unpacking
                 this.showList = result.results; //skickar med hela result istället för bara bit av det
-                this.divimg.innerHTML='';
+                this.divimg.innerHTML = '';
                 this.showList.forEach((element) => {
                     this.btn_image = document.createElement("button");
                     this.btn_image.className = "btn_image";
@@ -113,10 +112,10 @@ class MenuView {
                     this.btn_image.appendChild(this.dish_name_menu);
                     this.divimg.appendChild(this.btn_image);
                     this.button_list.push([this.btn_image, element]);
-                    
+
                 });
-                
-                
+
+
             });
     }
 }
