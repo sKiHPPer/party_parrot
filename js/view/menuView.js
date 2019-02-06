@@ -91,7 +91,9 @@ class MenuView {
         // Börja med att begära API kall från modellen
         
         this.model.getAllDishes(type,filter).catch(result => {
-            this.divimg.innerHTML += 'could not get recipes, please check internet connection and refresh the page.'
+            this.divimg.innerHTML = '<br>...could not load recipes, please check internet connection and refresh the page.'
+            this.divimg.innerHTML += '<br>'+result;
+
         })
            this.model.getAllDishes(type, filter)
             // registrera vad view ska göra när API kallet går igenom

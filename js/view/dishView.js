@@ -86,6 +86,11 @@ class DishView {
         }
         this.the_content.style = "display:none;"
         this.Loading.innerHTML = 'Loading...';
+        //Börjar med att kolla så att API kall från modellen är görbart
+        this.model.getDish(id).catch(result => {
+            this.Loading.innerHTML = '...could not load recipe, please check internet connection and refresh the page.'
+            this.Loading.innerHTML += '<br>'+result;
+        })
         // Börja med att begära API kall från modellen
         this.model.getDish(id)
             // registrera vad view ska göra när API kallet går igenom
