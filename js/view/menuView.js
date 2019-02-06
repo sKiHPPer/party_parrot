@@ -1,6 +1,3 @@
-
-
-
 class MenuView {
     constructor(container, model, generalController) {
         this.generalController = generalController;

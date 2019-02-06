@@ -162,12 +162,18 @@ class DinnerModel {
 
 	//function that returns a dish of specific ID
 	getDish(id) {
-		for (let key in this.dishes) {
-			if (this.dishes[key].id == id) {
-				return this.dishes[key];
+		return fetch(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${id}/information?includeNutrition=false`, {
+			headers: {
+				'X-Mashape-Key': API_KEY
 			}
-		}
-		return undefined;
+		})
+			.then(response => {//kollar att vi inte fått error när vi försökte fetcha
+				if (response.ok) {
+					return response;
+				}
+				throw Error(response.statusText);
+			})
+			.then(response => response.json())
 	}
 }
 
