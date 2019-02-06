@@ -66,6 +66,7 @@ class MenuView {
         this.tha_dish = '';
         this.dish;
         this.divimg = document.createElement("div");
+        //this.divimg.innerHTML = "loading...";
         
         this.createDishes('all', '')
 
@@ -78,6 +79,7 @@ class MenuView {
     updateSearch(type, filter) {
 
         //clear the view
+        //this.divimg.innerHTML = "loading...";
         while (this.divimg.firstChild) {
             this.divimg.removeChild(this.divimg.firstChild);
         }
@@ -85,9 +87,7 @@ class MenuView {
     }
 
     createDishes(type, filter){
-        while (this.divimg.firstChild) {
-            this.divimg.removeChild(this.divimg.firstChild);
-        }
+        
 
         this.button_list = [];
         
@@ -114,13 +114,7 @@ class MenuView {
                     this.divimg.appendChild(this.btn_image);
                     this.button_list.push([this.btn_image, element]);
                 });
+                
             });
-        // Medan vi väntar på API kall så kan vi skriva ut en placeholder.
-        console.log("promise recieved");
-        
-        console.log(loadingPlaceholder);
-        console.log("placeholder set");
-
-        console.log(this.showList)
     }
 }
