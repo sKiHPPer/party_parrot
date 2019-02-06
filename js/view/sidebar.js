@@ -89,6 +89,7 @@ class Sidebar {
 
         this.menu_list = [];
         this.WholeMenu = model.getFullMenu();
+        console.log(this.WholeMenu);
         this.TotalPrice = model.getTotalMenuPrice();
         this.tha_dish;
        

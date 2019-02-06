@@ -8,18 +8,21 @@ class DishView {
         //Stor div som allt på sidan ligger i.
         this.div = document.createElement("div");
 
+        //loading sign
+        this.Loading = document.createElement("div");
+        this.div.appendChild(this.Loading);
         //Ruta med dish name, bild och latinsk text.
         this.description = document.createElement("div");
         this.name = document.createElement("h4");
         this.image = document.createElement("img");
         //this.image.src = "images/"+this.dish.image;
-        //this.image.width = "200";
-        //this.image.height = "200";
+        this.image.width = "200";
+        this.image.height = "200";
         this.latin = document.createElement("p");
         this.latin.innerHTML = this.long_text;
 
         this.description.appendChild(this.name);
-        //this.description.appendChild(this.image);
+        this.description.appendChild(this.image);
         this.description.appendChild(this.latin);
 
         //Tillbaka knapp.
@@ -75,61 +78,72 @@ class DishView {
     update(model){
         this.guests= model.getNumberOfGuests();
         this.model = model;
-        console.log(this.dish);
 
         this.showDish(this.dish.id);
     }
 
     showDish(id){
-        this.dish = this.model.getDish(id);
-        console.log(this.dish);
-        this.name.innerHTML = this.dish.title;
-
         while(this.table_ingredients.firstChild){
             this.table_ingredients.removeChild(this.table_ingredients.firstChild);
         }
 
+        this.Loading.innerHTML = 'Loading...';
+        // Börja med att begära API kall från modellen
+        this.model.getDish(id)
+            // registrera vad view ska göra när API kallet går igenom
+            .then(dish => { //unpacking
+                this.dish = dish;
+                this.Loading.innerHTML = '';
+                this.dish.extendedIngredients.forEach((ingredient) => {
+                    //tha_ingredient = dish.ingredients[ingredient];
+                    //The row with all the columns.
+                    this.dish_row = document.createElement("tr");
+        
+                    //Cells with data.
+                    this.quantity = document.createElement("td");
+                    this.quantity.innerHTML = (this.guests*ingredient.amount)+" "+ingredient.unit;
+                    this.dish_row.appendChild(this.quantity);
+        
+                    this.ingr_name = document.createElement("td");
+                    this.ingr_name.innerHTML = ingredient.name;
+                    this.dish_row.appendChild(this.ingr_name);
+        
+                    this.SEK = document.createElement("td");
+                    this.SEK.innerHTML = "SEK";
+                    this.dish_row.appendChild(this.SEK);
+        
+                    this.ingr_price = document.createElement("td");
+                    this.ingr_price.innerHTML = this.guests;
+                    this.dish_row.appendChild(this.ingr_price);
+        
+                    //Appending the row with the ingredient to the big table.
+                    this.table_ingredients.appendChild(this.dish_row);
+        
+                });
+        
+                this.image.src = this.dish.image;
+         
+        
+                this.prep.innerHTML = this.dish.instructions;
+                this.dishPrice = this.model.getTotalDishPrice(dish);
+        
+                this.dish.extendedIngredients.forEach((ingredient) => {
+                    this.quantity.innerHTML = (this.guests*ingredient.amount)+" "+ingredient.unit;
+                    this.ingr_name.innerHTML = ingredient.name;
+                    this.ingr_price.innerHTML = this.guests;
+                    });
+        
+                this.total_dish_price.innerHTML = "SEK " + (this.dishPrice*this.guests);
+                //this.dish=dish;
+                
+                   
 
-        this.dish.extendedIngredients.forEach((ingredient) => {
-            //tha_ingredient = dish.ingredients[ingredient];
-            //The row with all the columns.
-            this.dish_row = document.createElement("tr");
+        this.name.innerHTML = this.dish.title;
+    }); 
+       
 
-            //Cells with data.
-            this.quantity = document.createElement("td");
-            this.quantity.innerHTML = (this.guests*ingredient.amount)+" "+ingredient.unit;
-            this.dish_row.appendChild(this.quantity);
 
-            this.ingr_name = document.createElement("td");
-            this.ingr_name.innerHTML = ingredient.name;
-            this.dish_row.appendChild(this.ingr_name);
-
-            this.SEK = document.createElement("td");
-            this.SEK.innerHTML = "SEK";
-            this.dish_row.appendChild(this.SEK);
-
-            this.ingr_price = document.createElement("td");
-            this.ingr_price.innerHTML = this.guests;
-            this.dish_row.appendChild(this.ingr_price);
-
-            //Appending the row with the ingredient to the big table.
-            this.table_ingredients.appendChild(this.dish_row);
-
-        });
-
-        //this.image.src = "images/"+this.dish.image;
- 
-
-        this.prep.innerHTML = this.dish.instructions;
-        this.dishPrice = this.model.getTotalDishPrice(this.dish);
-
-        this.dish.extendedIngredients.forEach((ingredient) => {
-            this.quantity.innerHTML = (this.guests*ingredient.amount)+" "+ingredient.unit;
-            this.ingr_name.innerHTML = ingredient.name;
-            this.ingr_price.innerHTML = this.guests;
-            });
-
-        this.total_dish_price.innerHTML = "SEK " + (this.dishPrice*this.guests);
+        
     }
 
 

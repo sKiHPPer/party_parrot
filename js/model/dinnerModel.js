@@ -55,9 +55,11 @@ class DinnerModel {
 	//Returns all the dishes on the menu.
 	getFullMenu() {
 		let full_menu = [];
-		for (let dish in this.dinner_menu) {
-			let dis = this.getDish(this.dinner_menu[dish]);
-			full_menu.push(dis);
+		for (let i in this.dinner_menu) {
+			this.getDish(this.dinner_menu[i])
+			.then(result => {
+				return result;
+			})
 		}
 		return full_menu;
 	}
@@ -87,21 +89,14 @@ class DinnerModel {
 	}
 
 	getTotalDishPrice(dish) {
-		total_price = dish.extendedIngredients.length*this.numberOfGuests;
-		console.log(total_price);
-		return total_price;
+		this.total_price = dish.extendedIngredients.length*this.numberOfGuests;
+		return this.total_price;
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 
 	addDishToMenu(id) {
-		let new_dish = this.getDish(id);
-		let type = new_dish.type;
-		let old_dish = this.getSelectedDish(type);
-		if (typeof old_dish !== 'undefined') {
-			this.removeDishFromMenu(old_dish);
-		}
 		this.dinner_menu.push(id);
 		this.notifyObservers(this);
 	}
