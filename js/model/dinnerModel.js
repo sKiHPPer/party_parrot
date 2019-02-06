@@ -86,15 +86,9 @@ class DinnerModel {
 		return total_price;
 	}
 
-	getTotalDishPrice(id) {
-		let total_price = 0;
-		let dish = this.getDish(id);
-		let i;
-
-		for (let i in dish.ingredients) {
-			let ingredient = dish.ingredients[i];
-			total_price = total_price + (ingredient.price * this.numberOfGuests);
-		}
+	getTotalDishPrice(dish) {
+		total_price = dish.extendedIngredients.length*this.numberOfGuests;
+		console.log(total_price);
 		return total_price;
 	}
 

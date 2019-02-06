@@ -3,7 +3,7 @@ class SmalldishController {
         this.generalController = generalController;
         this.view = view;
                 console.log("Knappen funkar1")
-                view.btn_image.addEventListener("click", () => this.generalController.showDishview(view.dish));  
+                view.btn_image.addEventListener("click", () => this.generalController.showDishview(view.dish.id));  
 
     }
 

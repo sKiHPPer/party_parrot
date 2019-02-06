@@ -1,10 +1,8 @@
 class DishView {
-    constructor (container, model, dish_id) {
+    constructor (container, model) {
         model.addObserver(this);
         this.model = model;
         this.long_text = model.long_text;
-        this.dish = model.getDish(dish_id);
-        this.dishPrice = model.getTotalDishPrice(dish_id);
         this.guests = model.getNumberOfGuests();
 
         //Stor div som allt på sidan ligger i.
@@ -13,16 +11,15 @@ class DishView {
         //Ruta med dish name, bild och latinsk text.
         this.description = document.createElement("div");
         this.name = document.createElement("h4");
-        this.name.innerHTML = this.dish.name;
         this.image = document.createElement("img");
-        this.image.src = "images/"+this.dish.image;
-        this.image.width = "200";
-        this.image.height = "200";
+        //this.image.src = "images/"+this.dish.image;
+        //this.image.width = "200";
+        //this.image.height = "200";
         this.latin = document.createElement("p");
         this.latin.innerHTML = this.long_text;
 
         this.description.appendChild(this.name);
-        this.description.appendChild(this.image);
+        //this.description.appendChild(this.image);
         this.description.appendChild(this.latin);
 
         //Tillbaka knapp.
@@ -37,7 +34,6 @@ class DishView {
         this.head_prep = document.createElement("h4");
         this.head_prep.innerHTML = "PREPARATION";
         this.prep = document.createElement("p");
-        this.prep.innerHTML = this.dish.description;
         
         this.description.appendChild(this.head_prep);
         this.description.appendChild(this.prep);
@@ -51,44 +47,7 @@ class DishView {
         this.amount_for_guests.innerHTML = "INGREDIENTS FOR "+this.guests+" PEOPLE";
         //The big table with the ingredients.
         this.table_ingredients = document.createElement("table");
-        //html = html + "<div class='col-md-5'><div class='big_box_ingredients'><p>INGREDIENTS FOR " + guests + " PEOPLE</p><div class='small_box_ingredients'>";
-        
-
-        //for (ingredient in dish.ingredients) 
-        
-            this.dish.ingredients.forEach((ingredient) => {
-                //tha_ingredient = dish.ingredients[ingredient];
-                //The row with all the columns.
-                this.dish_row = document.createElement("tr");
-
-                //Cells with data.
-                this.quantity = document.createElement("td");
-                this.quantity.innerHTML = (this.guests*ingredient.quantity)+" "+ingredient.unit;
-                this.dish_row.appendChild(this.quantity);
-
-                this.ingr_name = document.createElement("td");
-                this.ingr_name.innerHTML = ingredient.name;
-                this.dish_row.appendChild(this.ingr_name);
-
-                this.SEK = document.createElement("td");
-                this.SEK.innerHTML = "SEK";
-                this.dish_row.appendChild(this.SEK);
-
-                this.ingr_price = document.createElement("td");
-                this.ingr_price.innerHTML = this.guests * ingredient.price;
-                this.dish_row.appendChild(this.ingr_price);
-
-                //Appending the row with the ingredient to the big table.
-                this.table_ingredients.appendChild(this.dish_row);
-
-
-                //alert("image: "+"<img src='"+images/tha_dish.image+"'></img>") 
-                //html = html + "<p>" + (guests * tha_ingredient.quantity) + " " + tha_ingredient.unit + " " + tha_ingredient.name + " SEK " + (guests * tha_ingredient.price) + "</p>";
-
-                });
-            
-        //html = html + "</div><button class='button' id='btn'>Add to menu</button><p class='price'> SEK " + dishPrice + "</p></div></div>";
-        
+       
         //lägger till the table med alla ingredienser till box_ingredients.
         this.box_ingredients.appendChild(this.table_ingredients);
 
@@ -103,7 +62,6 @@ class DishView {
         //Total price for dish.
         this.total_dish_price = document.createElement("p");
         this.total_dish_price.className = "price";
-        this.total_dish_price.innerHTML = "SEK "+this.dishPrice;
         this.box_ingredients.appendChild(this.total_dish_price);
 
         //Lägg till boxen med ingredienser till stora diven samt appenda stora diven.
@@ -119,26 +77,27 @@ class DishView {
         this.model = model;
         console.log(this.dish);
 
-        this.showDish(this.dish);
+        this.showDish(this.dish.id);
     }
 
-    showDish(dish){
-        this.dish = dish;
-        this.name.innerHTML = this.dish.name;
+    showDish(id){
+        this.dish = this.model.getDish(id);
+        console.log(this.dish);
+        this.name.innerHTML = this.dish.title;
 
         while(this.table_ingredients.firstChild){
             this.table_ingredients.removeChild(this.table_ingredients.firstChild);
         }
 
 
-        this.dish.ingredients.forEach((ingredient) => {
+        this.dish.extendedIngredients.forEach((ingredient) => {
             //tha_ingredient = dish.ingredients[ingredient];
             //The row with all the columns.
             this.dish_row = document.createElement("tr");
 
             //Cells with data.
             this.quantity = document.createElement("td");
-            this.quantity.innerHTML = (this.guests*ingredient.quantity)+" "+ingredient.unit;
+            this.quantity.innerHTML = (this.guests*ingredient.amount)+" "+ingredient.unit;
             this.dish_row.appendChild(this.quantity);
 
             this.ingr_name = document.createElement("td");
@@ -150,7 +109,7 @@ class DishView {
             this.dish_row.appendChild(this.SEK);
 
             this.ingr_price = document.createElement("td");
-            this.ingr_price.innerHTML = this.guests * ingredient.price;
+            this.ingr_price.innerHTML = this.guests;
             this.dish_row.appendChild(this.ingr_price);
 
             //Appending the row with the ingredient to the big table.
@@ -158,16 +117,16 @@ class DishView {
 
         });
 
-        this.image.src = "images/"+this.dish.image;
+        //this.image.src = "images/"+this.dish.image;
  
 
-        this.prep.innerHTML = this.dish.description;
-        this.dishPrice = this.model.getTotalDishPrice(this.dish.id);
+        this.prep.innerHTML = this.dish.instructions;
+        this.dishPrice = this.model.getTotalDishPrice(this.dish);
 
-        this.dish.ingredients.forEach((ingredient) => {
-            this.quantity.innerHTML = (this.guests*ingredient.quantity)+" "+ingredient.unit;
+        this.dish.extendedIngredients.forEach((ingredient) => {
+            this.quantity.innerHTML = (this.guests*ingredient.amount)+" "+ingredient.unit;
             this.ingr_name.innerHTML = ingredient.name;
-            this.ingr_price.innerHTML = this.guests * ingredient.price;
+            this.ingr_price.innerHTML = this.guests;
             });
 
         this.total_dish_price.innerHTML = "SEK " + (this.dishPrice*this.guests);
