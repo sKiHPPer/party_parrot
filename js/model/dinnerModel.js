@@ -54,15 +54,6 @@ class DinnerModel {
 
 	//Returns all the dishes on the menu.
 	getFullMenu() {
-		//let full_menu = [];
-		//console.log(full_menu.lengt)
-		/*for (let i in this.dinner_menu) {
-			console.log(i)
-			this.getDish(this.dinner_menu[i])
-			.then(result => {
-				return result;
-			})
-		}*/
 		return this.dinner_menu;
 	}
 
@@ -78,20 +69,14 @@ class DinnerModel {
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	getTotalMenuPrice() {
-		let total_price = 0;
-		let all_ingredients = this.getAllIngredients();
-		let i;
-		for (let dish in all_ingredients) {
-			for (i in all_ingredients[dish]) {
-				let ingredient = all_ingredients[dish][i];
-				total_price = total_price + (ingredient.price * this.numberOfGuests);
-			}
-		}
-		return total_price;
+		this.total_price = 0;
+		this.dinner_menu.forEach((dish) => {
+			this.total_price += this.getTotalDishPrice(dish);
+		})
+		return this.total_price;
 	}
 
 	getTotalDishPrice(dish) {
-		console.log(dish);
 		this.total_price = dish.extendedIngredients.length*this.numberOfGuests;
 		return this.total_price;
 	}
