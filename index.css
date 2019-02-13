@@ -18,12 +18,9 @@ input:not(:checked) ~ .add2{display: none; white-space: pre-line;}
     margin-right: 0px;
 }
 
-button { 
-    text-align: center;
-    background-color: #f6b26b;
-    font-family: "Comic Sans MS", sans-serif;
-    color: black;
-    border: 3px solid black;
+.header {
+    
+    align-content: center;
 }
 
 
@@ -43,6 +40,7 @@ button {
     height: 40px;
     width: 114px;
     vertical-align: middle;
+    overflow: auto;
 }
 
 

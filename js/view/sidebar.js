@@ -1,5 +1,5 @@
 class Sidebar {
-
+    //hej, foppe här med designtips: pröva att göra om den delen av sidebaren som visar menyn till ett table
     constructor(container, model){
         model.addObserver(this);
 

@@ -29,6 +29,11 @@ class DishView {
         this.back_btn.className = "button";
         this.back_btn.id = "btn";
         this.back_btn.innerHTML = "Back to search";
+        //Tillbaka knapp vid error
+        this.back_btn2 = document.createElement("button");
+        this.back_btn2.className = "button";
+        this.back_btn2.id = "btn";
+        this.back_btn2.innerHTML = "Back to search";
          
         //Preparations avsnittet.
         this.head_prep = document.createElement("h4");
@@ -89,7 +94,9 @@ class DishView {
         //Börjar med att kolla så att API kall från modellen är görbart
         this.model.getDish(id).catch(result => {
             this.Loading.innerHTML = '...could not load recipe, please check internet connection and refresh the page.'
-            this.Loading.innerHTML += '<br>'+result;
+            this.Loading.innerHTML += '<br>'+result+'<br>';
+            this.Loading.appendChild(this.back_btn2);
+            
         })
         // Börja med att begära API kall från modellen
         this.model.getDish(id)
@@ -138,6 +145,7 @@ class DishView {
                     });
         
                 this.total_dish_price.innerHTML = "SEK " + this.dishPrice;
+                
                 //this.dish=dish;
                 
                    

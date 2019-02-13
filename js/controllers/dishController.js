@@ -7,5 +7,8 @@ class DishController{
         });
         view.back_btn.addEventListener("click", () => {
             generalController.showMenuview()});
+
+        view.back_btn2.addEventListener("click", () => {
+            generalController.showMenuview()});
     }
 }
