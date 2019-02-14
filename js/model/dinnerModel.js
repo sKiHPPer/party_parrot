@@ -105,7 +105,7 @@ class DinnerModel {
 		//fetch returnerar en promise
 		this.error = 'Error: Could not get dishes from data...'
 		//document.getElementById("container").innerHTML = this.error
-		return fetch(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type=${type}&number=20&query=${filter}`, { //kan ta bort 100
+		return fetch(`http://sunset.nada.kth.se:8080/iprog/group/57/recipes/search?type=${type}&number=20&query=${filter}`, { //kan ta bort 100
 			headers: {
 				'X-Mashape-Key': API_KEY
 			}
@@ -123,7 +123,7 @@ class DinnerModel {
 
 	//function that returns a dish of specific ID
 	getDish(id) {
-		return fetch(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${id}/information?includeNutrition=false`, {
+		return fetch(`http://sunset.nada.kth.se:8080/iprog/group/57/recipes/${id}/information?includeNutrition=false`, {
 			headers: {
 				'X-Mashape-Key': API_KEY
 			}
